@@ -2,7 +2,7 @@ Proposal
 
 1. TITLE
 
-	Your title should give a clear indication of your proposed research approach or key question
+	Browser Crash Analysis on Low Memory Mobile Devices
 
 2. BACKGROUND AND RATIONALE
 
