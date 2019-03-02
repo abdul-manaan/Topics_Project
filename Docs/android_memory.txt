@@ -1,0 +1,80 @@
+Q. How Memory Management is done in Android?
+
+Android uses Paging and memory-mapping for memory management. Android’s process and memory management is a little unusual. Like Java and .NET, Android uses its own run time and virtual machine to manage application memory. Unlike either of these frameworks, the Android run time also manages the process lifetimes. Android ensures application responsiveness by stopping and killing processes as necessary to free resources for higher-priority applications. The order in which processes are killed to reclaim resources is determined by the priority of the hosted applications. An application’s priority is equal to its highest-priority component. 
+Processes:
+    Active => Visible => Starved Service => Background => Empty
+    High Priority        ------------>         Low Priority
+
+Configure lmkd with the following properties:
+    Property 	                Use 	                                                         Default Value
+    ro.config.low_ram 	        Choose between low-memory vs. high-performance device. 	         false
+    ro.lmk.use_minfree_levels 	Use free memory and file cache thresholds 
+                                for making decisions when to kill. This mode 
+                                works the same way kernel lowmemorykiller driver used to work. 	 false
+    ro.lmk.low 	                The minimum oom_adj score for processes eligible to be killed 
+                                at low vmpressure level. 	                                     1001
+                                                                                                 (disabled)
+    ro.lmk.medium 	            The minimum oom_adj score for processes eligible to be killed 
+                                at medium vmpressure level. 	                                 800
+                                                                                                 (cached or non-essential services)
+    ro.lmk.critical 	        The minimum oom_adj score for processes eligible to be killed 
+                                at critical vmpressure level. 	                                 0
+                                                                                                 (any process)
+    ro.lmk.critical_upgrade 	Enables upgrade to critical level. 	                             false
+    ro.lmk.upgrade_pressure 	The maximum mem_pressure at which level will be upgraded 
+                                because system is swapping too much. 	                         100
+                                                                                                 (disabled)
+    ro.lmk.downgrade_pressure 	The minimum mem_pressure* at which vmpressure event will be 
+                                ignored because enough free memory is still available. 	         100
+    (disabled)
+    ro.lmk.kill_heaviest_task 	Kill heaviest eligible task (best decision) vs. any 
+                                eligible task (fast decision). 	                                 true
+    ro.lmk.kill_timeout_ms 	    Duration in ms after a kill when no additional kill will 
+                                be done. 	                                                     0
+                                                                                                 (disabled)
+    ro.lmk.debug 	            Enable lmkd debug logs. 	                                     false
+
+
+
+Note: mem_pressure = RAM usage / RAM_and_swap usage in %
+
+Here is a device configuration example:
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.low=1001 \
+    ro.lmk.medium=800 \
+    ro.lmk.critical=0 \
+    ro.lmk.critical_upgrade=false \
+    ro.lmk.upgrade_pressure=100 \
+    ro.lmk.downgrade_pressure=100 \
+    ro.lmk.kill_heaviest_task=true
+
+
+
+LMKD Thresholds
+Foreground          8MB
+Visible             12MB
+Secondary Server    16MB
+Hidden Application  24MB
+Content Provider    28MB
+Empty Application   32MB
+
+
+
+Whar are these levels of applications:
+    FOREGROUND_APP: This is the application currently on the screen, and running
+    VISIBLE_APP: This is an application that is open, and running in the background because it's still doing something
+    SECONDARY_SERVER: This is a process (a service that an application needs) that is alive and ready in case it's needed to do something
+    HIDDEN_APP: This again is a process, that sits idle (but still alive) in case it's needed by an app that's alive and running
+    CONTENT_PROVIDER: This is apps that provide data (content) to the system.  HTC Facebook Sync? That's a CONTENT_PROVIDER.  So are things like the Android Market, or Fring.  If they are alive, they can refresh and provide the content they are supposed to at the set interval.  If you kill them, they can't of course.
+    EMPTY_APP: I call these "ghosts."  They are apps that you have opened, but are done with them.  Android uses a unique style of handling memory management.  When an activity is ended, instead of killing it off Android keeps the application in memory so that opening them again is a faster process.  Theses "ghost" apps use no battery or CPU time, they just fill RAM that would be otherwise empty. When this memory is needed by a different application or process, the RAM is flushed and made available for the new app.
+
+
+
+Shared Memory :
+ In order to fit everything it needs in RAM, Android tries to share RAM pages across processes. It can do so in the following ways:
+
+=> Each app process is forked from an existing process called Zygote. The Zygote process starts when the system boots and loads common framework code and resources (such as activity themes). To start a new app process, the system forks the Zygote process then loads and runs the app's code in the new process. This approach allows most of the RAM pages allocated for framework code and resources to be shared across all app processes.
+=> Most static data is mmapped into a process. This technique allows data to be shared between processes, and also allows it to be paged out when needed. Example static data include: Dalvik code (by placing it in a pre-linked .odex file for direct mmapping), app resources (by designing the resource table to be a structure that can be mmapped and by aligning the zip entries of the APK), and traditional project elements like native code in .so files.
+=> In many places, Android shares the same dynamic RAM across processes using explicitly allocated shared memory regions (either with ashmem or gralloc). For example, window surfaces use shared memory between the app and screen compositor, and cursor buffers use shared memory between the content provider and client.
+
