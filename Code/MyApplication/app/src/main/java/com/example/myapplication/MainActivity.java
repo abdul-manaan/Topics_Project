@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    public native String stringFromJNI(int oom,int mem,String fname);
+    public native String stringFromJNI(int mem,int oom,String fname);
 
     public void callMe(View view) {
         out.println("LOA");

@@ -1,0 +1,2332 @@
+<!DOCTYPE html>
+<html class="v2" dir="ltr" lang="en"><head>
+<link href="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/2727757643-css_bundle_v2.css" rel="stylesheet" type="text/css">
+<meta content="width=1100" name="viewport">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="blogger" name="generator">
+<link href="https://linuxhowtoguide.blogspot.com/favicon.ico" rel="icon" type="image/x-icon">
+<link href="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/how-to-setup-web-page-test-private_006.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="Linux, Cloud &amp; Windows tutorials for beginners  - Atom" href="https://linuxhowtoguide.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="Linux, Cloud &amp; Windows tutorials for beginners  - RSS" href="https://linuxhowtoguide.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="Linux, Cloud &amp; Windows tutorials for beginners  - Atom" href="https://www.blogger.com/feeds/4016716843503156610/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="Linux, Cloud &amp; Windows tutorials for beginners  - Atom" href="https://linuxhowtoguide.blogspot.com/feeds/3525644295856578726/comments/default">
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/864213505-ieretrofit.js"></script>
+<![endif]-->
+<link href="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/infp.png" rel="image_src">
+<meta content="https://linuxhowtoguide.blogspot.com/2017/01/how-to-setup-web-page-test-private.html" property="og:url">
+<meta content="How to Setup Web Page Test Private Instance Ubuntu 16.x" property="og:title">
+<meta content="&quot;A blog for IT professionals, How to install and configure various package in Linux operating system, included Ubuntu, CentOS, Redhat, Debian etc." property="og:description">
+<meta content="https://4.bp.blogspot.com/-7EjKKetCC1U/WIxVcZ5Y0WI/AAAAAAAACgM/qzW3oCbqsRAAyYSRgj8qqnDFyWgiatckQCLcB/w1200-h630-p-k-no-nu/infp.php.png" property="og:image">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Linux, Cloud &amp; Windows tutorials for beginners : How to Setup Web Page Test Private Instance Ubuntu 16.x</title>
+<style type="text/css">@font-face{font-family:'Arvo';font-style:normal;font-weight:400;src:local('Arvo'),url(//fonts.gstatic.com/s/arvo/v11/tDbD2oWUg0MKqScQ7Q.woff2)format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Cardo';font-style:normal;font-weight:700;src:local('Cardo Bold'),local('Cardo-Bold'),url(//fonts.gstatic.com/s/cardo/v10/wlpygwjKBV1pqhND-ZQa-WN3aQ.woff2)format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Cardo';font-style:normal;font-weight:700;src:local('Cardo Bold'),local('Cardo-Bold'),url(//fonts.gstatic.com/s/cardo/v10/wlpygwjKBV1pqhND-ZQV-WN3aQ.woff2)format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Cardo';font-style:normal;font-weight:700;src:local('Cardo Bold'),local('Cardo-Bold'),url(//fonts.gstatic.com/s/cardo/v10/wlpygwjKBV1pqhND-ZQY-WN3aQ.woff2)format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Cardo';font-style:normal;font-weight:700;src:local('Cardo Bold'),local('Cardo-Bold'),url(//fonts.gstatic.com/s/cardo/v10/wlpygwjKBV1pqhND-ZQW-WM.woff2)format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}</style>
+<style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Simple
+Designer: Blogger
+URL:      www.blogger.com
+----------------------------------------------- */
+
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 14px Verdana, Geneva, sans-serif;
+color: #414141;
+background: #8dde6b none repeat scroll top left;
+padding: 0 40px 40px 40px;
+}
+html body .region-inner {
+min-width: 0;
+max-width: 100%;
+width: auto;
+}
+h2 {
+font-size: 22px;
+}
+a:link {
+text-decoration:none;
+color: #4cc523;
+}
+a:visited {
+text-decoration:none;
+color: #8c8c8c;
+}
+a:hover {
+text-decoration:underline;
+color: #5aff39;
+}
+.body-fauxcolumn-outer .fauxcolumn-inner {
+background: transparent url(https://resources.blogblog.com/blogblog/data/1kt/simple/body_gradient_tile_light.png) repeat scroll top left;
+_background-image: none;
+}
+.body-fauxcolumn-outer .cap-top {
+position: absolute;
+z-index: 1;
+height: 400px;
+width: 100%;
+}
+.body-fauxcolumn-outer .cap-top .cap-left {
+width: 100%;
+background: transparent url(https://resources.blogblog.com/blogblog/data/1kt/simple/gradients_light.png) repeat-x scroll top left;
+_background-image: none;
+}
+.content-outer {
+-moz-box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+-goog-ms-box-shadow: 0 0 10px #333333;
+box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+margin-bottom: 1px;
+}
+.content-inner {
+padding: 10px 10px;
+}
+.content-inner {
+background-color: #ffffff;
+}
+/* Header
+----------------------------------------------- */
+.header-outer {
+background: rgba(62, 62, 62, 0) none repeat-x scroll 0 -400px;
+_background-image: none;
+}
+.Header h1 {
+font: normal normal 60px Arvo;
+color: #c33574;
+text-shadow: -1px -1px 1px rgba(0, 0, 0, .2);
+}
+.Header h1 a {
+color: #c33574;
+}
+.Header .description {
+font-size: 140%;
+color: #7c7c7c;
+}
+.header-inner .Header .titlewrapper {
+padding: 22px 30px;
+}
+.header-inner .Header .descriptionwrapper {
+padding: 0 30px;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-inner .section:first-child {
+border-top: 1px solid #efefef;
+}
+.tabs-inner .section:first-child ul {
+margin-top: -1px;
+border-top: 1px solid #efefef;
+border-left: 0 solid #efefef;
+border-right: 0 solid #efefef;
+}
+.tabs-inner .widget ul {
+background: #f6f6f6 url(https://resources.blogblog.com/blogblog/data/1kt/simple/gradients_light.png) repeat-x scroll 0 -800px;
+_background-image: none;
+border-bottom: 1px solid #efefef;
+margin-top: 0;
+margin-left: -30px;
+margin-right: -30px;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+padding: .6em 1em;
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #9c9c9c;
+border-left: 1px solid #ffffff;
+border-right: 1px solid #efefef;
+}
+.tabs-inner .widget li:first-child a {
+border-left: none;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+color: #000000;
+background-color: #efefef;
+text-decoration: none;
+}
+/* Columns
+----------------------------------------------- */
+.main-outer {
+border-top: 0 solid #efefef;
+}
+.fauxcolumn-left-outer .fauxcolumn-inner {
+border-right: 1px solid #efefef;
+}
+.fauxcolumn-right-outer .fauxcolumn-inner {
+border-left: 1px solid #efefef;
+}
+/* Headings
+----------------------------------------------- */
+div.widget > h2,
+div.widget h2.title {
+margin: 0 0 1em 0;
+font: normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #000000;
+}
+/* Widgets
+----------------------------------------------- */
+.widget .zippy {
+color: #9c9c9c;
+text-shadow: 2px 2px 1px rgba(0, 0, 0, .1);
+}
+.widget .popular-posts ul {
+list-style: none;
+}
+/* Posts
+----------------------------------------------- */
+h2.date-header {
+font: normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+}
+.date-header span {
+background-color: rgba(62, 62, 62, 0);
+color: #414141;
+padding: inherit;
+letter-spacing: inherit;
+margin: inherit;
+}
+.main-inner {
+padding-top: 30px;
+padding-bottom: 30px;
+}
+.main-inner .column-center-inner {
+padding: 0 15px;
+}
+.main-inner .column-center-inner .section {
+margin: 0 15px;
+}
+.post {
+margin: 0 0 25px 0;
+}
+h3.post-title, .comments h4 {
+font: normal bold 20px Cardo;
+margin: .75em 0 0;
+}
+.post-body {
+font-size: 110%;
+line-height: 1.4;
+position: relative;
+}
+.post-body img, .post-body .tr-caption-container, .Profile img, .Image img,
+.BlogList .item-thumbnail img {
+padding: 2px;
+background: #ffffff;
+border: 1px solid #efefef;
+-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+}
+.post-body img, .post-body .tr-caption-container {
+padding: 5px;
+}
+.post-body .tr-caption-container {
+color: #414141;
+}
+.post-body .tr-caption-container img {
+padding: 0;
+background: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+}
+.post-header {
+margin: 0 0 1.5em;
+line-height: 1.6;
+font-size: 90%;
+}
+.post-footer {
+margin: 20px -2px 0;
+padding: 5px 10px;
+color: #6d6d6d;
+background-color: #fafafa;
+border-bottom: 1px solid #efefef;
+line-height: 1.6;
+font-size: 90%;
+}
+#comments .comment-author {
+padding-top: 1.5em;
+border-top: 1px solid #efefef;
+background-position: 0 1.5em;
+}
+#comments .comment-author:first-child {
+padding-top: 0;
+border-top: none;
+}
+.avatar-image-container {
+margin: .2em 0 0;
+}
+#comments .avatar-image-container img {
+border: 1px solid #efefef;
+}
+/* Comments
+----------------------------------------------- */
+.comments .comments-content .icon.blog-author {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+}
+.comments .comments-content .loadmore a {
+border-top: 1px solid #9c9c9c;
+border-bottom: 1px solid #9c9c9c;
+}
+.comments .comment-thread.inline-thread {
+background-color: #fafafa;
+}
+.comments .continue {
+border-top: 2px solid #9c9c9c;
+}
+/* Accents
+---------------------------------------------- */
+.section-columns td.columns-cell {
+border-left: 1px solid #efefef;
+}
+.blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.blog-pager-older-link, .home-link,
+.blog-pager-newer-link {
+background-color: #ffffff;
+padding: 5px;
+}
+.footer-outer {
+border-top: 0 dashed #bbbbbb;
+}
+/* Mobile
+----------------------------------------------- */
+body.mobile  {
+background-size: auto;
+}
+.mobile .body-fauxcolumn-outer {
+background: transparent none repeat scroll top left;
+}
+.mobile .body-fauxcolumn-outer .cap-top {
+background-size: 100% auto;
+}
+.mobile .content-outer {
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+}
+.mobile .tabs-inner .widget ul {
+margin-left: 0;
+margin-right: 0;
+}
+.mobile .post {
+margin: 0;
+}
+.mobile .main-inner .column-center-inner .section {
+margin: 0;
+}
+.mobile .date-header span {
+padding: 0.1em 10px;
+margin: 0 -10px;
+}
+.mobile h3.post-title {
+margin: 0;
+}
+.mobile .blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.mobile .footer-outer {
+border-top: none;
+}
+.mobile .main-inner, .mobile .footer-inner {
+background-color: #ffffff;
+}
+.mobile-index-contents {
+color: #414141;
+}
+.mobile-link-button {
+background-color: #4cc523;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #ffffff;
+}
+.mobile .tabs-inner .section:first-child {
+border-top: none;
+}
+.mobile .tabs-inner .PageList .widget-content {
+background-color: #efefef;
+color: #000000;
+border-top: 1px solid #efefef;
+border-bottom: 1px solid #efefef;
+}
+.mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
+border-left: 1px solid #efefef;
+}
+
+--></style>
+<style id="template-skin-1" type="text/css"><!--
+body {
+min-width: 1500px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 1500px;
+max-width: 1500px;
+_width: 1500px;
+}
+.main-inner .columns {
+padding-left: 0px;
+padding-right: 360px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 0px;
+right: 360px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("0px") -
+parseInt("360px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 0px;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 360px;
+}
+.main-inner .column-left-outer {
+width: 0px;
+right: 100%;
+margin-left: -0px;
+}
+.main-inner .column-right-outer {
+width: 360px;
+margin-right: -360px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+body#layout div.add_widget {
+padding: 8px;
+}
+body#layout div.add_widget a {
+margin-left: 32px;
+}
+--></style>
+<link href="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/authorization.css" media="all" onload="if(media!='all')media='all'" rel="stylesheet"><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=4016716843503156610&amp;zx=c5591f0d-2b79-4ab8-a6c0-d3d2891a55f4' rel='stylesheet'/></noscript>
+
+<script src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/osd.js"></script><script src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/ca-pub-1478923030603790.js"></script><script src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/show_ads_impl.js" id="google_shimpl"></script><script src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/cbgapi.loaded_4" async=""></script><script src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/cbgapi.loaded_3" async=""></script><script src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/cbgapi.loaded_2" async=""></script><script type="text/javascript" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/google_top_exp.js"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0} </style><script async="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/lazy.js"></script><link rel="preload" href="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/integrator.js" as="script"><script type="text/javascript" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/integrator.js"></script><link rel="preload" href="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/integrator_002.js" as="script"><script type="text/javascript" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/integrator_002.js"></script><link rel="preload" href="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/show_ads_impl.js" as="script"></head>
+<body class=" variant-pale">
+<div class="navbar section" id="navbar" name="Navbar"><div class="widget Navbar" data-version="1" id="Navbar1"><script src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/cbgapi.loaded_1" async=""></script><script src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/cbgapi.loaded_0" async=""></script><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" id="navbar-iframe" name="navbar-iframe" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/navbar.html" width="100%" frameborder="0"></iframe></div>
+<script type="text/javascript" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d4016716843503156610\x26blogName\x3dLinux,+Cloud+%26+Windows+tutorials+for+...\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://linuxhowtoguide.blogspot.com/search\x26blogLocale\x3den\x26v\x3d2\x26homepageUrl\x3dhttps://linuxhowtoguide.blogspot.com/\x26targetPostID\x3d3525644295856578726\x26blogPostOrPageUrl\x3dhttps://linuxhowtoguide.blogspot.com/2017/01/how-to-setup-web-page-test-private.html\x26vt\x3d6462791407889748182',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div class="body-fauxcolumns">
+<div class="fauxcolumn-outer body-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="content-fauxcolumns">
+<div class="fauxcolumn-outer content-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content-outer">
+<div class="content-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left content-fauxborder-left">
+<div class="fauxborder-right content-fauxborder-right"></div>
+<div class="content-inner">
+<header>
+<div class="header-outer">
+<div class="header-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left header-fauxborder-left">
+<div class="fauxborder-right header-fauxborder-right"></div>
+<div class="region-inner header-inner">
+<div class="header section" id="header" name="Header"><div class="widget Header" data-version="1" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="https://linuxhowtoguide.blogspot.com/">
+Linux, Cloud &amp; Windows tutorials for beginners 
+</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>
+</span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="header-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</header>
+<div class="tabs-outer">
+<div class="tabs-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left tabs-fauxborder-left">
+<div class="fauxborder-right tabs-fauxborder-right"></div>
+<div class="region-inner tabs-inner">
+<div class="tabs no-items section" id="crosscol" name="Cross-Column"></div>
+<div class="tabs no-items section" id="crosscol-overflow" name="Cross-Column 2"></div>
+</div>
+</div>
+<div class="tabs-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="main-outer">
+<div class="main-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left main-fauxborder-left">
+<div class="fauxborder-right main-fauxborder-right"></div>
+<div class="region-inner main-inner">
+<div class="columns fauxcolumns">
+<div class="fauxcolumn-outer fauxcolumn-center-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-left-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-right-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class="columns-inner">
+<div class="column-center-outer">
+<div class="column-center-inner">
+<div class="main section" id="main" name="Main"><div class="widget Blog" data-version="1" id="Blog1">
+<div class="blog-posts hfeed">
+
+          <div class="date-outer">
+        
+<h2 class="date-header"><span>Saturday, January 28, 2017</span></h2>
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<div class="post hentry uncustomized-post-template" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<meta content="https://4.bp.blogspot.com/-7EjKKetCC1U/WIxVcZ5Y0WI/AAAAAAAACgM/qzW3oCbqsRAAyYSRgj8qqnDFyWgiatckQCLcB/s640/infp.php.png" itemprop="image_url">
+<meta content="4016716843503156610" itemprop="blogId">
+<meta content="3525644295856578726" itemprop="postId">
+<a name="3525644295856578726"></a>
+<h3 class="post-title entry-title" itemprop="name">
+How to Setup Web Page Test Private Instance Ubuntu 16.x
+</h3>
+<div class="post-header">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content" id="post-body-3525644295856578726" itemprop="description articleBody">
+<div dir="ltr" style="text-align: left;" trbidi="on">
+<h2 style="text-align: left;">
+<span style="color: blue;">Web Page Test (WPT) :-&nbsp;</span></h2>
+<div>
+Web Page Test is an awesome tool to check website performance and loading time from different geographical locations.&nbsp;</div>
+<div>
+<br></div>
+<div>
+Web Page Test also available <a href="http://www.webpagetest.org/">publically </a>and it's open source, free to test website loading time.</div>
+<div>
+We can set up our private instance to run the&nbsp;test and can enable script for&nbsp;automation test.</div>
+<div>
+<br></div>
+<div>
+<h2>
+<span style="color: blue;">System Requirement:-&nbsp;</span></h2>
+</div>
+<div>
+We required Two working PC to set up private WPT instance.</div>
+<div>
+1- WPT Server, In my case, I am using Ubuntu 16.04</div>
+<div>
+2-One Windows PC where we need to install browser i.e. Chrome, IE, Mozilla etc..</div>
+<div>
+<br></div>
+<div>
+<h2>
+<span style="color: blue;">Step 1- Configure WPT web server</span></h2>
+</div>
+<div>
+The Web Server can be any that support PHP scripts, I am using Ubuntu&nbsp;16.04.</div>
+<div>
+<b><span style="font-size: large;"><br></span></b></div>
+<div>
+<b><span style="font-size: large;">Required Software packages on Ubuntu Server</span></b></div>
+<div>
+A- <b>Apache or Nginx</b> with following modules</div>
+<div>
+o- &nbsp;mod_expire</div>
+<div>
+o- &nbsp;moe_headers</div>
+<div>
+o- mod_rewrite</div>
+<div>
+<br></div>
+<div>
+B- <b>PHP</b> 5.3 or any later version with following modules.&nbsp;</div>
+<div>
+o- php-gd</div>
+<div>
+0- php-zip</div>
+<div>
+o- php-zlib</div>
+<div>
+o- php-curl</div>
+<div>
+o- php-sqlite&nbsp;</div>
+<div>
+<br></div>
+<div>
+C- <b>FFMPEG</b></div>
+o- Make available in the path (used to extract video thumbnail images)<br>
+<br>
+<br>
+D- <b>Imagemagick</b> (optional)<br>
+o- Necessary for mobile video processing if using the mobile Node.js agent<br>
+<br>
+<br>
+E- <b>Jpegtran</b> (optional)<br>
+o- Make available in the path (used for displaying jpeg analysis)<br>
+<br>
+<br>
+F- <b>ExifTool</b> (optional)<br>
+<div>
+o-&nbsp;Make available in the path (used for displaying jpeg analysis)</div>
+<div>
+<br></div>
+<div>
+<h2>
+<span style="color: blue;">Step 2- Install&nbsp;All required software packages.</span></h2>
+</div>
+<div>
+A- Install&nbsp;<b>Nginx </b>using below command.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# apt install nginx</span></span></pre>
+</div>
+<div>
+Start Nginx server using below command</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# systemctl restart nginx</span></span></pre>
+</div>
+<div>
+B- Install PHP using below command</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# apt install php7.0-fpm</span></span></pre>
+</div>
+<div>
+Install PHP all required modules using below command</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><span style="color: red; font-size: x-small;">root@U16:~#</span> </span><span style="color: red;"><span style="font-size: 15.4px;">apt-get install php7.0-mysql php7.0-zip php7.0-curl php7.0-gd php7.0-intl php-pear php-imagick php7.0-imap php7.0-mcrypt php-memcache  php7.0-pspell   php7.0-recode php7.0-sqlite3 php7.0-tidy php7.0-xmlrpc php7.0-xsl php7.0-mbstring php-gettext php-apcu</span></span></pre>
+</div>
+<div>
+Start php7.0-fpm &nbsp;service using below command.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# systemctl start php7.0-fpm</span></span></pre>
+</div>
+<div>
+C- Install FFMPEG using below command.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# apt install ffmpeg</span></span></pre>
+</div>
+<div>
+D- Install ImageMagick using command below</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# apt install imagemagick</span></span></pre>
+</div>
+<div>
+E-Install jpegtran&nbsp;using command below</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# apt install libjpeg-progs</span></span></pre>
+</div>
+<div>
+F- Install Exiftool using command below</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# apt install exiftool</span></span></pre>
+</div>
+<div>
+<br></div>
+<div>
+All required package installation is done successfully, let test Nginx 
+web server and PHP installation by executing PHP script to get PHP 
+version info.</div>
+<div>
+<br></div>
+<div>
+<h2>
+<span style="color: blue;">Step 3- Verify PHP installation&nbsp;</span></h2>
+</div>
+<div>
+Command &nbsp;First Modify Nginx default VHost or SMB to configure PHP &nbsp;and it should look like as below.</div>
+<div>
+Open default SMB using command below</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# vi /etc/nginx/sites-available/default</span></span></pre>
+</div>
+<div>
+<br></div>
+<div>
+Your Nginx SMB should be like this.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="font-size: 15.4px;"><span style="color: red;">
+ server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        </span># SSL configuration
+        #
+        # listen 443 ssl default_server;
+        # listen [::]:443 ssl default_server;
+        #
+        # Note: You should disable gzip for SSL traffic.
+        # See: https://bugs.debian.org/773332
+        #
+        # Read up on ssl_ciphers to ensure a secure configuration.
+        # See: https://bugs.debian.org/765782
+        #
+        # Self signed certs generated by the ssl-cert package
+        # Don't use them in a production server!
+        #
+        # include snippets/snakeoil.conf;<span style="color: red;">
+
+        root /var/www/html/;
+
+        </span># Add index.php to the list if you are using PHP<span style="color: red;">
+        index index.php index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                </span># First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.<span style="color: red;">
+                try_files $uri $uri/ =404;
+        }
+  </span> # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #<span style="color: red;">
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+       </span> #
+        #       # With php7.0-cgi alone:
+        #       fastcgi_pass 127.0.0.1:9000;
+        #       # With php7.0-fpm:<span style="color: red;">
+                fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        }
+
+        </span># deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #<span style="color: red;">
+        location ~ /\.ht {
+                deny all;
+        }
+}</span></span>
+</pre>
+</div>
+<div>
+Save and Exit from File.</div>
+<div>
+<br></div>
+<div>
+Create info.php file to default path /Var/www/html/ using command below</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# vi /var/www/html/info.php</span></span></pre>
+</div>
+<div>
+And append below syntax into this file.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">&lt;?php
+phpinfo();
+?&gt;</span></span></pre>
+</div>
+<div>
+Save and Exit from file.</div>
+<div>
+<br></div>
+<div>
+Open the browser and put this <a href="http://192.168.28.120/info.php">URL</a>&nbsp;to check PHP info.</div>
+<div>
+<br></div>
+<div>
+If everything configure properly&nbsp;you will get page like below.</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://4.bp.blogspot.com/-7EjKKetCC1U/WIxVcZ5Y0WI/AAAAAAAACgM/qzW3oCbqsRAAyYSRgj8qqnDFyWgiatckQCLcB/s1600/infp.php.png" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/infp.png" width="640" height="512" border="0"></a></div>
+<div>
+</div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<h2>
+<span style="color: blue;">Step 4- Download and Install WPT package.</span></h2>
+<div>
+Download Latest WPT 3.0 package from below link.</div>
+<div>
+<a href="https://github.com/WPO-Foundation/webpagetest/releases/download/WebPageTest-3.0/webpagetest_3.0.zip">https://github.com/WPO-Foundation/webpagetest/releases/download/WebPageTest-3.0/webpagetest_3.0.zip</a></div>
+<div>
+<br></div>
+<div>
+First, go to dir /var/www/html and create a new dir name WPT and run below command.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:/var/www/html/WPT# wget https://github.com/WPO-Foundation/webpagetest/releases/download/WebPageTest-3.0/webpagetest_3.0.zip</span></span></pre>
+</div>
+<div>
+<br></div>
+<div>
+Now Extract the downloaded package using the command below.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:/var/www/html/WPT# unzip webpagetest_3.0.zip</span></span></pre>
+</div>
+<div>
+Now Move extracted WWW folder to path /var/www/html/public using command below.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:/var/www/html/WPT# mv www/ ../webpagetest</span></span></pre>
+</div>
+<div>
+<br></div>
+<div>
+Change root document permission using command below.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:/var/www/html# chown -R www-data:www-data webpagetest/</span></span></pre>
+</div>
+<div>
+<br></div>
+<div>
+<h2>
+<span style="color: blue;">Step 5- Modify Nginx default VHost change root path and add index.php.</span></h2>
+</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="font-size: 15.4px;">server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # SSL configuration
+        #
+        # listen 443 ssl default_server;
+        # listen [::]:443 ssl default_server;
+        #
+        # Note: You should disable gzip for SSL traffic.
+        # See: https://bugs.debian.org/773332
+        #
+        # Read up on ssl_ciphers to ensure a secure configuration.
+        # See: https://bugs.debian.org/765782
+        #
+        # Self signed certs generated by the ssl-cert package
+        # Don't use them in a production server!
+        #
+        # include snippets/snakeoil.conf;<span style="color: red;">
+
+        root /var/www/html/webpagetest;
+</span>
+        # Add index.php to the list if you are using PHP
+        index <span style="color: red;">index.php </span>index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }</span>
+</pre>
+</div>
+<div>
+<br></div>
+<div>
+Save and Exit from the&nbsp;file.</div>
+<div>
+<br></div>
+<div>
+Restart Nginx using the command below.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# systemctl restart nginx</span></span></pre>
+</div>
+<div>
+<br></div>
+<div>
+<div>
+<h2>
+<span style="color: blue;">Step 6- Validate WPT installation and check.</span></h2>
+</div>
+<div>
+&nbsp;Open web browser &nbsp;put this URL -<a href="http://192.168.28.120/install/" target="_blank"> http://192.168.28.120/install/</a></div>
+<div>
+<br></div>
+<div>
+If everything installed correctly you will get page like below.</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://4.bp.blogspot.com/-mpnJeQnEizg/WIxdOCG8zsI/AAAAAAAACgo/GOXs39dQOcwQ_WXCM4qwjXwkEGG_ynk6wCLcB/s1600/wptinstall.PNG" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/wptinstall.PNG" width="640" height="609" border="0"></a></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+</div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+Open browser and hit Server IP- &nbsp;<a href="http://192.168.28.120/" target="_blank">http://192.168.28.120/</a></div>
+<div>
+You Will get page like below.</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://1.bp.blogspot.com/-QYjUNHEslHo/WIxatawuncI/AAAAAAAACgc/WDVnHnzMGnAjP7fPGBRbZC_Dr-Jt9x1HgCLcB/s1600/WPT.PNG" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/WPT.PNG" width="640" height="296" border="0"></a></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+Congrats Installation completed successfully.</div>
+<div>
+<br></div>
+<div>
+<h2>
+<span style="color: blue;">Step 7- Get API Key and configure it.</span></h2>
+</div>
+<div>
+You can get the API Key from link below following the instruction.</div>
+<div>
+<a href="https://www.webpagetest.org/getkey.php" target="_blank">https://www.webpagetest.org/getkey.php</a></div>
+<div>
+<br></div>
+<div>
+Lest configure key so that we can run the first test by modifying file below.</div>
+<div>
+<b>Go to path /var/www/html/webpagetest/settings</b></div>
+<div>
+<b><br></b></div>
+<div>
+Create a copy file below</div>
+<div>
+&nbsp;<b>locations.ini.sample</b>&nbsp;=&nbsp;<b>locations.ini</b></div>
+<div>
+<b>connectivity.ini.sample = &nbsp;connectivity.ini</b></div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:~# cd /var/www/html/webpagetest/settings/
+root@U16:/var/www/html/webpagetest/settings# cp locations.ini.sample locations.ini
+root@U16:/var/www/html/webpagetest/settings# cp connectivity.ini.sample connectivity.ini</span></span>
+</pre>
+</div>
+<div>
+<br></div>
+<div>
+Lets put key in the file name locations.ini.</div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="color: red;"><span style="font-size: 15.4px;">root@U16:/var/www/html/webpagetest/settings# vi locations.ini</span></span></pre>
+</div>
+<div>
+<b>Your file should look like below. go to end of the file and add you key.</b></div>
+<div>
+<pre style="background-attachment: initial; background-clip: initial; background-color: #fff9ee; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 3px; border: 1px solid rgb(204, 204, 204); overflow-x: auto; padding: 5px 10px; word-wrap: normal;"><span style="font-size: 15.4px;">[WPT_Dulles_IE8]
+browser=IE 8
+label="WebPagetest.org Dulles, VA - IE8"
+relayServer="https://www.webpagetest.org/"<span style="color: red;">
+relayKey=**************
+</span>relayLocation=Dulles_IE8<span style="color: red;">
+                         </span></span></pre>
+</div>
+<div>
+Save and exit from file and run your First Test.</div>
+<div>
+<br></div>
+<div>
+Now your Instance look like below, Including Test location and Brower Name.</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://2.bp.blogspot.com/-4A__YgK9Li8/WIxg90mGfBI/AAAAAAAACg0/D5EY_KEMS28E8oT-Qmd_suIEwSst1LMngCLcB/s1600/ftest.PNG" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/ftest.PNG" width="640" height="308" border="0"></a></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br></div>
+<div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<span style="color: #274e13; font-size: large;"><b>Congrats, You have successfully configured your WPT private Instance.</b></span></div>
+</div>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1">
+<span class="post-author vcard">
+Posted by
+<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+<meta content="https://plus.google.com/107649678832026859706" itemprop="url">
+<a class="g-profile" href="https://plus.google.com/107649678832026859706" rel="author" title="author profile" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+<span itemprop="name">Amar Singh</span>
+</a>
+</span>
+</span>
+<span class="post-timestamp">
+at
+<meta content="https://linuxhowtoguide.blogspot.com/2017/01/how-to-setup-web-page-test-private.html" itemprop="url">
+<a class="timestamp-link" href="https://linuxhowtoguide.blogspot.com/2017/01/how-to-setup-web-page-test-private.html" rel="bookmark" title="permanent link"><abbr class="published" itemprop="datePublished" title="2017-01-28T15:31:00+05:30">3:31 PM</abbr></a>
+</span>
+<span class="reaction-buttons">
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-backlinks post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-control blog-admin pid-468865075">
+<a href="https://www.blogger.com/post-edit.g?blogID=4016716843503156610&amp;postID=3525644295856578726&amp;from=pencil" title="Edit Post">
+<img alt="" class="icon-action" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_edit_allbkg.gif" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="post-share-buttons goog-inline-block">
+<a class="goog-inline-block share-button sb-email" href="https://www.blogger.com/share-post.g?blogID=4016716843503156610&amp;postID=3525644295856578726&amp;target=email" target="_blank" title="Email This"><span class="share-button-link-text">Email This</span></a><a class="goog-inline-block share-button sb-blog" href="https://www.blogger.com/share-post.g?blogID=4016716843503156610&amp;postID=3525644295856578726&amp;target=blog" onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target="_blank" title="BlogThis!"><span class="share-button-link-text">BlogThis!</span></a><a class="goog-inline-block share-button sb-twitter" href="https://www.blogger.com/share-post.g?blogID=4016716843503156610&amp;postID=3525644295856578726&amp;target=twitter" target="_blank" title="Share to Twitter"><span class="share-button-link-text">Share to Twitter</span></a><a class="goog-inline-block share-button sb-facebook" href="https://www.blogger.com/share-post.g?blogID=4016716843503156610&amp;postID=3525644295856578726&amp;target=facebook" onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target="_blank" title="Share to Facebook"><span class="share-button-link-text">Share to Facebook</span></a><a class="goog-inline-block share-button sb-pinterest" href="https://www.blogger.com/share-post.g?blogID=4016716843503156610&amp;postID=3525644295856578726&amp;target=pinterest" target="_blank" title="Share to Pinterest"><span class="share-button-link-text">Share to Pinterest</span></a>
+</div>
+</div>
+<div class="post-footer-line post-footer-line-2">
+<span class="post-labels">
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3">
+<span class="post-location">
+</span>
+</div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>2 comments:</h4>
+<div class="comments-content">
+<script async="async" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/how-to-setup-web-page-test-private_006.html" type="text/javascript"></script>
+<script type="text/javascript">
+    (function() {
+      var items = null;
+      var msgs = null;
+      var config = {};
+
+// <![CDATA[
+      var cursor = null;
+      if (items && items.length > 0) {
+        cursor = parseInt(items[items.length - 1].timestamp) + 1;
+      }
+
+      var bodyFromEntry = function(entry) {
+        var text = (entry &&
+                    ((entry.content && entry.content.$t) ||
+                     (entry.summary && entry.summary.$t))) ||
+            '';
+        if (entry && entry.gd$extendedProperty) {
+          for (var k in entry.gd$extendedProperty) {
+            if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
+              return '<span class="deleted-comment">' + text + '</span>';
+            }
+          }
+        }
+        return text;
+      }
+
+      var parse = function(data) {
+        cursor = null;
+        var comments = [];
+        if (data && data.feed && data.feed.entry) {
+          for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+            var comment = {};
+            // comment ID, parsed out of the original id format
+            var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+            comment.id = id ? id[2] : null;
+            comment.body = bodyFromEntry(entry);
+            comment.timestamp = Date.parse(entry.published.$t) + '';
+            if (entry.author && entry.author.constructor === Array) {
+              var auth = entry.author[0];
+              if (auth) {
+                comment.author = {
+                  name: (auth.name ? auth.name.$t : undefined),
+                  profileUrl: (auth.uri ? auth.uri.$t : undefined),
+                  avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
+                };
+              }
+            }
+            if (entry.link) {
+              if (entry.link[2]) {
+                comment.link = comment.permalink = entry.link[2].href;
+              }
+              if (entry.link[3]) {
+                var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
+                if (pid && pid[1]) {
+                  comment.parentId = pid[1];
+                }
+              }
+            }
+            comment.deleteclass = 'item-control blog-admin';
+            if (entry.gd$extendedProperty) {
+              for (var k in entry.gd$extendedProperty) {
+                if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
+                  comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
+                } else if (entry.gd$extendedProperty[k].name == 'blogger.displayTime') {
+                  comment.displayTime = entry.gd$extendedProperty[k].value;
+                }
+              }
+            }
+            comments.push(comment);
+          }
+        }
+        return comments;
+      };
+
+      var paginator = function(callback) {
+        if (hasMore()) {
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+          if (cursor) {
+            url += '&published-min=' + new Date(cursor).toISOString();
+          }
+          window.bloggercomments = function(data) {
+            var parsed = parse(data);
+            cursor = parsed.length < 50 ? null
+                : parseInt(parsed[parsed.length - 1].timestamp) + 1
+            callback(parsed);
+            window.bloggercomments = null;
+          }
+          url += '&callback=bloggercomments';
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      };
+      var hasMore = function() {
+        return !!cursor;
+      };
+      var getMeta = function(key, comment) {
+        if ('iswriter' == key) {
+          var matches = !!comment.author
+              && comment.author.name == config.authorName
+              && comment.author.profileUrl == config.authorUrl;
+          return matches ? 'true' : '';
+        } else if ('deletelink' == key) {
+          return config.baseUri + '/delete-comment.g?blogID='
+               + config.blogId + '&postID=' + comment.id;
+        } else if ('deleteclass' == key) {
+          return comment.deleteclass;
+        }
+        return '';
+      };
+
+      var replybox = null;
+      var replyUrlParts = null;
+      var replyParent = undefined;
+
+      var onReply = function(commentId, domId) {
+        if (replybox == null) {
+          // lazily cache replybox, and adjust to suit this style:
+          replybox = document.getElementById('comment-editor');
+          if (replybox != null) {
+            replybox.height = '250px';
+            replybox.style.display = 'block';
+            replyUrlParts = replybox.src.split('#');
+          }
+        }
+        if (replybox && (commentId !== replyParent)) {
+          replybox.src = '';
+          document.getElementById(domId).insertBefore(replybox, null);
+          replybox.src = replyUrlParts[0]
+              + (commentId ? '&parentID=' + commentId : '')
+              + '#' + replyUrlParts[1];
+          replyParent = commentId;
+        }
+      };
+
+      var hash = (window.location.hash || '#').substring(1);
+      var startThread, targetComment;
+      if (/^comment-form_/.test(hash)) {
+        startThread = hash.substring('comment-form_'.length);
+      } else if (/^c[0-9]+$/.test(hash)) {
+        targetComment = hash.substring(1);
+      }
+
+      // Configure commenting API:
+      var configJso = {
+        'maxDepth': config.maxThreadDepth
+      };
+      var provider = {
+        'id': config.postId,
+        'data': items,
+        'loadNext': paginator,
+        'hasMore': hasMore,
+        'getMeta': getMeta,
+        'onReply': onReply,
+        'rendered': true,
+        'initComment': targetComment,
+        'initReplyThread': startThread,
+        'config': configJso,
+        'messages': msgs
+      };
+
+      var render = function() {
+        if (window.goog && window.goog.comments) {
+          var holder = document.getElementById('comment-holder');
+          window.goog.comments.render(holder, provider);
+        }
+      };
+
+      // render now, or queue to render when library loads:
+      if (window.goog && window.goog.comments) {
+        render();
+      } else {
+        window.goog = window.goog || {};
+        window.goog.comments = window.goog.comments || {};
+        window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
+        window.goog.comments.loadQueue.push(render);
+      }
+    })();
+// ]]>
+  </script>
+<div id="comment-holder">
+<div class="comment-thread toplevel-thread"><ol id="top-ra"><li class="comment" id="c1112431692760664738"><div class="avatar-image-container"><img src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/blank.gif" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://linuxhowtoguide.blogspot.com/2017/01/how-to-setup-web-page-test-private.html?showComment=1551668623959#c1112431692760664738">March 4, 2019 at 8:33 AM</a></span></div><p class="comment-content">How to setup locations without api kry?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="1112431692760664738" href="javascript:;">Reply</a><span class="item-control blog-admin blog-admin pid-962680821"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=4016716843503156610&amp;postID=1112431692760664738">Delete</a></span></span></div><div class="comment-replies"><div id="c1112431692760664738-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c1112431692760664738-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c3431339379409961925"><div class="avatar-image-container"><img src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/photo.jpg" alt=""></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/04256826552252526332" rel="nofollow">Amar Singh</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="https://linuxhowtoguide.blogspot.com/2017/01/how-to-setup-web-page-test-private.html?showComment=1551677962906#c3431339379409961925">March 4, 2019 at 11:09 AM</a></span></div><p class="comment-content">You have to setup your own Client machine first then define in configuration file on WPT server. </p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-492226619"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=4016716843503156610&amp;postID=3431339379409961925">Delete</a></span></span></div><div class="comment-replies"><div id="c3431339379409961925-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self" href="javascript:;">Replies</a></span></span><ol id="c3431339379409961925-ra" class="thread-chrome thread-expanded"><div></div><div id="c3431339379409961925-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="3431339379409961925" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c3431339379409961925-ce"></div></li></div><div id="c1112431692760664738-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="1112431692760664738" href="javascript:;">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c1112431692760664738-ce"></div></li></ol><div id="top-continue" class="continue hidden"><a class="comment-reply" target="_self" href="javascript:;">Add comment</a></div><div class="comment-replybox-thread" id="top-ce"><iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" id="comment-editor" name="comment-editor" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/comment-iframe.html" style="display: block;" data-resized="true" width="100%" height="216px" frameborder="0"></iframe></div><div class="loadmore hidden" data-post-id="3525644295856578726"><a target="_self">Load more...</a></div></div>
+</div>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<p>
+</p>
+<a href="https://www.blogger.com/comment-iframe.g?blogID=4016716843503156610&amp;postID=3525644295856578726&amp;blogspotRpcToken=7054087" id="comment-editor-src"></a>
+
+<script src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/55386745-comment_from_post_iframe.js" type="text/javascript"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+<p></p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="https://linuxhowtoguide.blogspot.com/2017/01/how-to-install-lxd-container-hypervisor.html" id="Blog1_blog-pager-newer-link" title="Newer Post">Newer Post</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="https://linuxhowtoguide.blogspot.com/2016/12/step-by-step-installing-cacti-on-ubuntu.html" id="Blog1_blog-pager-older-link" title="Older Post">Older Post</a>
+</span>
+<a class="home-link" href="https://linuxhowtoguide.blogspot.com/">Home</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Subscribe to:
+<a class="feed-link" href="https://linuxhowtoguide.blogspot.com/feeds/3525644295856578726/comments/default" target="_blank" type="application/atom+xml">Post Comments (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="column-left-outer">
+<div class="column-left-inner">
+<aside>
+</aside>
+</div>
+</div>
+<div class="column-right-outer">
+<div class="column-right-inner">
+<aside>
+<div class="sidebar section" id="sidebar-right-1"><div class="widget Profile" data-version="1" id="Profile1">
+<h2>Blog Author</h2>
+<div class="widget-content">
+<a href="https://plus.google.com/101444126227771216753"><img alt="My photo" class="profile-img" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/photo_002.jpg" width="80" height="80"></a>
+<dl class="profile-datablock">
+<dt class="profile-data">
+<a class="profile-name-link g-profile" href="https://plus.google.com/101444126227771216753" rel="author" style="background-image: url(//www.google.com/images/icons/ui/gprofile_button-16.png);" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+Amar Singh
+</a>
+<br>
+<div style="position: absolute; width: 450px; left: -10000px;" id="___follow_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" id="I0_1551898126101" name="I0_1551898126101" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/follow.html" data-gapiattached="true" width="100%" frameborder="0"></iframe></div><div class="g-follow" data-annotation="bubble" data-height="20" data-href="https://plus.google.com/101444126227771216753" data-gapiscan="true" data-onload="true" data-gapistub="true"></div>
+</dt>
+</dl>
+<a class="profile-link" href="https://plus.google.com/101444126227771216753" rel="author">View my complete profile</a>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=Profile&amp;widgetId=Profile1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' rel="nofollow" target="configProfile1" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget AdSense" data-version="1" id="AdSense1">
+<div class="widget-content">
+<script async="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/adsbygoogle.js"></script>
+<!-- linuxhowtoguide_sidebar-right-1_AdSense1_1x1_as -->
+<ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-1478923030603790" data-ad-host="ca-host-pub-1556223355139109" data-ad-host-channel="L0001" data-ad-slot="5390546146" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=AdSense&amp;widgetId=AdSense1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("AdSense1"));' rel="nofollow" target="configAdSense1" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget BlogArchive" data-version="1" id="BlogArchive1">
+<h2>Blog Archive</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<select id="BlogArchive1_ArchiveMenu">
+<option value="">Blog Archive</option>
+<option value="https://linuxhowtoguide.blogspot.com/2016/07/">July (8)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2016/08/">August (12)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2016/09/">September (4)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2016/10/">October (1)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2016/11/">November (2)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2016/12/">December (1)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2017/01/" selected="selected">January (2)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2017/02/">February (1)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2017/03/">March (4)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2017/06/">June (6)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2017/07/">July (4)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2017/08/">August (5)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2017/09/">September (3)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2017/10/">October (5)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2017/11/">November (3)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2017/12/">December (1)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2018/02/">February (5)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2018/03/">March (9)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2018/04/">April (1)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2018/06/">June (2)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2018/07/">July (2)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2018/08/">August (6)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2018/09/">September (4)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2018/10/">October (3)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2018/11/">November (3)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2018/12/">December (4)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2019/01/">January (2)</option>
+<option value="https://linuxhowtoguide.blogspot.com/2019/02/">February (3)</option>
+</select>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=BlogArchive&amp;widgetId=BlogArchive1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' rel="nofollow" target="configBlogArchive1" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList1">
+<h2>UBUNTU</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="http://linuxhowtoguide.blogspot.ca/2016/07/how-to-update-time-zone-linux-ubuntu.html">How to update Time Zone Linux Ubuntu </a>
+</li>
+<li>
+<a href="http://linuxhowtoguide.blogspot.ca/2016/07/how-to-install-and-configure-vsftpd-in.html">How to install and configure VSFTPD in linux ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://bitbucket.org/amars86/linux/wiki/How-To-Extend-Non-LVM-Partition-Linux">How To Extend Non LVM Partition Linux</a>
+</li>
+<li>
+<a href="http://linuxhowtoguide.blogspot.ca/2016/07/how-to-remove-any-package-from-linux.html">How to remove &amp; Purge any package from Linux Ubuntu completely </a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/07/how-to-setup-central-log-server.html">How to Setup Central Log Server  Ubuntu 16.04 TLS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/08/how-to-add-new-network-adapter-in-linux.html">How to add new Network Adapter in Linux Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/08/how-to-install-apache-tomcat-9-on.html">How To Install Apache Tomcat 9 on Ubuntu 16.04 </a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2016/08/how-to-enable-telnet-in-linux-server.html">How to Enable Telnet In Linux Server</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2016/08/how-to-send-e-mail-via-telnet-with.html">How To Send E-mail Via Telnet with Authentication</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2016/08/how-to-mount-windows-share-to-ubuntu.html">How to Mount Windows Share to Ubuntu Linux Machine using CIFS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/08/how-to-create-backup-of-all-users-home.html">How to Create Backup of all User's Home Directory and Save as individually.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/12/step-by-step-installing-cacti-on-ubuntu.html">Step by Step Installing Cacti on Ubuntu 14.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/01/how-to-setup-web-page-test-private.html">How to Setup Web Page Test Private Instance Ubuntu 16.04.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/01/how-to-install-lxd-container-hypervisor.html">How to install LXD container hypervisor on Ubuntu 16.04 LTS server</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/02/how-to-install-and-configure-magento.html">How to install and configure Magento with Nginx Ubuntu 16.04 LTS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/06/how-to-install-apache-24-and-configure.html">How to Install Apache 2.4 and Configure Virtual Host in Ubuntu 16.04 LTS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/06/how-to-install-mysql-57-on-ubuntu-1604.html">How To Install MySQL 5.7 On Ubuntu 16.04 LTS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/06/how-to-setup-mysql-57-mastermaster.html">How to Setup MySQL 5.7 Master/Master Replication Ubuntu 16.04 LTS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/06/error-could-not-get-lock-varlibdpkglock.html">Error - Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/06/how-to-create-apache-self-signed-ssl.html">How to Create Apache Self Signed SSL Certificate Ubuntu 16.04 LTS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/06/how-to-setup-rsync-to-sync-directories.html">How to setup Rsync to Sync directories between two Ubuntu Linux Server Without  Password</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/07/how-to-create-lvm-logical-volume-in.html">How to Create (LVM) Logical Volume in Linux - (PVCreate, VGCreate, LVCreate,LVextend)</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/07/step-by-step-configuring-nfs-network.html">Step by Step configuring NFS (Network File System) Linux Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/07/step-by-step-move-lvm-vg-volume-group.html">How to Move LVM ( VG-Volume Group , PV-Physical Voulme and LV- Logical Volume) to another Linux System.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/07/step-by-step-setting-up-mail-server.html">Step by Step setting up a Mail Server Debain-9.0: Postfix, Dovecot, MySQL and PostfixAdmin </a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/08/how-to-run-apache-tomcat-multiple.html">How to Run Apache Tomcat Multiple instance on same server using two different IP address Linux.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/10/how-to-configure-postfix-smtp-relay.html">How to configure Postfix SMTP relay office365 on Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2018/02/scp-command-with-different-switch-linux.html">SCP command with different switch Linux</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2018/02/how-to-run-sudo-command-without.html">How to run Sudo command without entering password in the Linux</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2018/03/how-to-install-setup-apache-cassandra.html">How To Install &amp; Setup Apache Cassandra and Run a Single Node cluster on Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/p/cloud-world.html"> How to install MEAN Stack (MongoDB, Express.JS, Angular.JS, Node.JS) on Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/p/jira.html">How to install Jira Server Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/p/postgresql.html"> How to Install PostgreSQL, basic server setup &amp;administration command</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/08/how-to-configurerun-multiple-php.html">How to configure/Run Multiple PHP version on Single Linux machine.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/p/plesk.html">Step by step installing &amp; Configuring Plesk on Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/p/apache.html"> Redirect HTTP to HTTPS on Apache Virtual Host</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/p/sendmail.html">How to Setup Sendmail as SMTP relay</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/06/ubuntu1404-setup-unattended-security.html">Ubuntu14.04 setup unattended security update</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/08/how-to-migrate-user-from-one-linux.html">How to Migrate User from One Linux System to Fresh installed new Linux System</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/08/how-to-install-docker-in-ubuntu-1604-lts.html">How to install Docker in Ubuntu 16.04 LTS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/09/git-create-first-repository-and-first.html">Git - Create First Repository and Clone on local computer using git-bash Cli</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/10/how-to-secure-apache-with-lets-encrypt.html">How To Secure Apache with Let's Encrypt on Ubuntu 18.04</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList1"));' rel="nofollow" target="configPageList1" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList5">
+<h2>CentOS</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/08/how-to-mount-windows-share-to-linux.html">How to Mount Windows Share to Linux Machine using CIFS </a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/08/how-to-add-new-network-adapter-in-hyper.html">How to add new Network Adapter in Hyper-V Linux CentOS 6.4 </a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/08/how-to-send-email-from-gmail-or-hotmail.html">How to Send Email from Gmail E-mail's account from command Linux CentOS </a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/08/how-to-create-folder-backup-keep.html">How to Create Folder Backup Keep Compress and E-mail Report Linux</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/09/setting-up-openerp-odoo-9-with-apache.html">Setting Up OpenERP (Odoo) 9 with Apache on CentOS 7.x</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/09/how-to-set-up-firewall-using-firewalld.html">How To Set Up a Firewall Using FirewallD on CentOS 7.x</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/09/setting-up-multiple-instance-of-openerp.html">Setting Up multiple Instance of OpenERP (Odoo) 9 on CentOS 7.x</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/09/how-to-install-subversion-on-centos-7x.html">How To Install Subversion On CentOS 7.X</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2016/10/step-by-step-creating-svn-repository.html">Step by Step Creating SVN Repository Centos 7.X</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2017/03/how-to-configure-postfix-smtp-relay.html">How to configure Postfix SMTP relay office365 on Centos 7.x</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/08/install-sendemail-simple-smtp-client.html">Install SendEmail (Simple SMTP client for Linux) on Linux Ubuntu, Centos &amp; Redhat</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList5&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList5"));' rel="nofollow" target="configPageList5" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList6">
+<h2>NAGIOS</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/11/step-by-step-installation-of-nagios4x.html">Step by Step Installing Nagios Core 4.x Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/11/how-to-monitor-windows-machine-in.html">How to Monitor Windows Machine in Nagios using NSClient++ Agent</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/03/how-to-install-nagios-on-centos-67.html">How to Install Nagios on Centos 6.7 final release</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/03/how-to-install-and-configure-nagios-4x.html">How to Install and configure Nagios 4.x on Centos 7.x</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/03/how-to-install-and-configure-pnp4nagios.html">How to Install and configure Pnp4Nagios Bulk+NPCD Mode with Nagios4.x Centos 7.x</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/09/steps-how-to-install-and-configure.html">Steps how to install and configure Pnp4Nagios Bulk+NPCD Mode with Nagios4.x Ubuntu-16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/10/steps-how-to-configure-e-mail.html">Steps how to configure E-mail notification Nagios4.x Ubuntu-16.04</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList6&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList6"));' rel="nofollow" target="configPageList6" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget AdSense" data-version="1" id="AdSense6">
+<div class="widget-content">
+<script async="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/adsbygoogle.js"></script>
+<!-- linuxhowtoguide_sidebar-right-2-1_AdSense6_1x1_as -->
+<ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-1478923030603790" data-ad-host="ca-host-pub-1556223355139109" data-ad-host-channel="L0001" data-ad-slot="3973982451" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=AdSense&amp;widgetId=AdSense6&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("AdSense6"));' rel="nofollow" target="configAdSense6" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList3">
+<h2>NGINX</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://bitbucket.org/amars86/linux/wiki/How_To_Install_And_Configure_Nginx_+php-fpm_+mysql5.7_Ubuntu16.04">How To Install And Configure Nginx php-fpm and mysql5.7 Ubuntu16.04</a>
+</li>
+<li>
+<a href="https://bitbucket.org/amars86/linux/wiki/How_to_configure_Nginx_load_balancer">How to configure Nginx load balancer </a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/p/nodejs.html">NodeJS Setup NodeJS Application on Production with Nginx as reverse proxy Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/p/nginx.html">Nginx - Installation and configuration steps Ubuntu 16.04</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList3&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList3"));' rel="nofollow" target="configPageList3" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList11">
+<h2>Apache2</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/06/how-to-install-apache-24-and-configure.html">How to Install Apache 2.4 and Configure Virtual Host in Ubuntu 16.04 LTS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/p/apache24.html">apache2.4 - How to redirect your application to HTTP from HTTPS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/p/apache.html">Redirect HTTP to HTTPS on Apache Virtual Host</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList11&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList11"));' rel="nofollow" target="configPageList11" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList4">
+<h2>VmWare</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/07/how-to-forward-vmware-esxi-5x-and-6x.html">How to forward Vmware ESXi 5.x and 6.x host logs to central log server </a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList4&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList4"));' rel="nofollow" target="configPageList4" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget AdSense" data-version="1" id="AdSense5">
+<div class="widget-content">
+<script async="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/adsbygoogle.js"></script>
+<!-- linuxhowtoguide_sidebar-right-2-1_AdSense5_1x1_as -->
+<ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-1478923030603790" data-ad-host="ca-host-pub-1556223355139109" data-ad-host-channel="L0001" data-ad-slot="9801024209" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=AdSense&amp;widgetId=AdSense5&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("AdSense5"));' rel="nofollow" target="configAdSense5" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList10">
+<h2>MongoDB</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2018/03/how-to-install-mongodb-3x-on-ubuntu.html">How to Install MongoDB 3.x on Ubuntu 16.04 LTS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2018/03/mongodb-basic-administration-command.html">Mongodb basic administration command- Create DB, Create User, Assign Permission, restrict access</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2018/03/how-to-setup-and-configure-parse-server.html">How to Setup and Configure Parse Server with Parse Dashboard Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2018/03/how-to-setup-parse-dashboard-on-ubuntu.html">How to Setup Parse Dashboard on Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2018/03/how-to-keep-parse-server-dashboard.html">How to Keep parse server dashboard running or start at system boot</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/p/mongobd.html">MongoDB - 10 Easy steps for Administrator to manage MongoDB Server</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/p/nodejs.html">NodeJS Setup NodeJS Application on Production with Nginx as reverse proxy Ubuntu 16.04</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList10&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList10"));' rel="nofollow" target="configPageList10" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList2">
+<h2>MYSQL</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="http://linuxhowtoguide.blogspot.ca/2016/07/mysql-error-1018-hy000-cant-read-dir-of.html">MySql - ERROR 1018 (HY000): Can't read dir of '.' (errno: 24 - Too many open files</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/08/how-to-backup-all-database-mysql.html">Backup all MySql database using script.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2016/08/error-mysql-manager-or-server-pid-file.html">ERROR! MySQL manager or server PID file could not be found!</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/08/how-to-take-mysql-backup-using-bin-bash.html">How to take MySQL backup using bin bash script Linux- Ubuntu, Centos, Redhat &amp; send Email notification</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/08/some-useful-important-mysql-command-to.html">Some useful important MySQL command to monitor Process, Open connection and load average</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/09/solved-error-3167-hy000.html">[SOLVED]
+ ERROR 3167 (HY000) The 'INFORMATION_SCHEMA.GLOBAL_VARIABLES' feature is
+ disabled see the documentation for 'show_compatibility_56'</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/p/mysql.html">How to Create MySQL Database, User, Password and grant permission.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/09/test-database-connectivity-using-php.html">Test Database connectivity using PHP script</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList2&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList2"));' rel="nofollow" target="configPageList2" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget AdSense" data-version="1" id="AdSense2">
+<div class="widget-content">
+<script async="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/adsbygoogle.js"></script>
+<!-- linuxhowtoguide_sidebar-right-2-1_AdSense2_1x1_as -->
+<ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-1478923030603790" data-ad-host="ca-host-pub-1556223355139109" data-ad-host-channel="L0001" data-ad-slot="2140233058" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0px;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=AdSense&amp;widgetId=AdSense2&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("AdSense2"));' rel="nofollow" target="configAdSense2" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList7">
+<h2>AWS</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/09/what-is-amazon-ec2-elastic-compute-cloud.html">What is Amazon EC2 (Elastic Compute Cloud )</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/2017/10/what-is-amazon-s3-glacier-and-its.html">What is Amazon S3 &amp; Glacier and it's limitations</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/10/what-is-amazon-iam-identity-access.html">What is Amazon IAM (Identity access management)</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/10/what-is-amazon-cloud-front.html">What is Amazon Cloud Front</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/11/what-is-aws-powershell-and-working-with.html">What is AWS Powershell and Working with it</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/11/what-is-aws-command-line-interface-aws.html">What is AWS command line interface ( AWS CLI )</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/p/puttygen.html">How to Convert .PEMto .PPK Private key</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.in/p/awsuser.html">How to add new user AWS EC2 instance and add .PPK file to allow access</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/08/what-is-aws-opsworks.html">What is AWS OpsWorks</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/08/how-to-transfer-putty-saved-session-to.html">How to transfer Putty saved session to another Windows Machine.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/08/how-to-install-docker-in-windows-machine.html">How to install Docker in Windows Machine</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/10/install-aws-command-line-interface-cli.html">Install AWS Command Line Interface (CLI) on Ubuntu 18.04 LTS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/11/what-is-amazon-elastic-load-balancing.html">What is Amazon Elastic Load Balancing</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/12/how-to-setup-aws-eks-cluster-with.html">How to Setup AWS EKS Cluster with Worker Node and Managment Server</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2019/01/how-to-setup-lamp-stack-on-aws-eks.html">How to Setup LAMP stack on AWS EKS</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList7&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList7"));' rel="nofollow" target="configPageList7" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList8">
+<h2>Window- PowerShell</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/11/how-to-stop-and-start-service-using.html">How to Stop and Start Service using Powershell until service status equal to Started or stopped</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2017/12/how-to-get-systems-inventory-ie-ram.html">How to Get Systems Inventory i.e. RAM, Disk, CPU and Operating systems information using Powershell in domain.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2018/03/step-by-step-installation-of-octopus.html">Step by Step installation of Octopus deploy server.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2018/03/how-to-configure-infrastructure-in.html">How to configure infrastructure in octopus deploy server and add target machine</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/p/domainrecord.html">How to Check DNS Records Type- A, NS, TXT, CNAME, MX using Powersell</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/07/extract-zip-using-powershell-script.html">Extract Zip files using Powershell Script</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/09/how-to-enable-psremoting-to-execute.html">How to enable PSRemoting to execute Powershell script from Remote Machine.</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList8&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList8"));' rel="nofollow" target="configPageList8" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+<table class="section-columns columns-2" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td class="first columns-cell">
+<div class="sidebar section" id="sidebar-right-2-1"><div class="widget PageList" data-version="1" id="PageList12">
+<h2>Docker</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/08/how-to-install-docker-in-ubuntu-1604-lts.html">How to install Docker in Ubuntu 16.04 LTS</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/11/dockerfile-create-docker-image-and.html">DockerFile - Create Docker image and install Apache2 on Ubuntu16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/12/how-to-setup-two-nodes-docker-swarm.html">How to Setup Two Nodes Docker Swarm Cluster - Ubuntu 16.04</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/12/dockerfile-create-docker-image-with.html">Dockerfile- Create Docker Image with Apache-2.4 and PHP-7.2</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/12/how-to-setup-single-node-kubernetes.html">How to Setup Single Node Kubernetes Cluster using MiniKube On Windows</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2019/01/how-to-setup-lamp-stack-on-docker-system.html">How to Setup LAMP Stack on Docker System</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2019/02/how-to-install-docker-in-windows-7.html">How to Install Docker in Windows 7</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList12&amp;action=editWidget&amp;sectionId=sidebar-right-2-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList12"));' rel="nofollow" target="configPageList12" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget AdSense" data-version="1" id="AdSense3">
+<div class="widget-content">
+<script async="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/adsbygoogle.js"></script>
+<!-- linuxhowtoguide_footer-1_AdSense3_1x1_as -->
+<ins class="adsbygoogle" style="display: block; height: 0px;" data-ad-client="ca-pub-1478923030603790" data-ad-host="ca-host-pub-1556223355139109" data-ad-host-channel="L0003" data-ad-slot="4833487845" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display: inline-table; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 135px; background-color: transparent;"><ins id="aswift_4_anchor" style="display: block; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 135px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0px;width:135px;height:600px;" width="135" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=AdSense&amp;widgetId=AdSense3&amp;action=editWidget&amp;sectionId=sidebar-right-2-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("AdSense3"));' rel="nofollow" target="configAdSense3" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</td>
+<td class="columns-cell">
+<div class="sidebar section" id="sidebar-right-2-2"><div class="widget AdSense" data-version="1" id="AdSense4">
+<div class="widget-content">
+<script async="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/adsbygoogle.js"></script>
+<!-- linuxhowtoguide_sidebar-right-2-1_AdSense4_1x1_as -->
+<ins class="adsbygoogle" style="display: block; height: 0px;" data-ad-client="ca-pub-1478923030603790" data-ad-host="ca-host-pub-1556223355139109" data-ad-host-channel="L0001" data-ad-slot="3596142387" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display: inline-table; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 135px; background-color: transparent;"><ins id="aswift_5_anchor" style="display: block; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 135px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;border:0px;width:135px;height:600px;" width="135" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=AdSense&amp;widgetId=AdSense4&amp;action=editWidget&amp;sectionId=sidebar-right-2-2" onclick='return _WidgetManager._PopupConfig(document.getElementById("AdSense4"));' rel="nofollow" target="configAdSense4" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sidebar section" id="sidebar-right-3"><div class="widget PageList" data-version="1" id="PageList9">
+<h2>Jenkins</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2018/02/how-to-setup-jenkins-slave-on-windows.html">How to setup Jenkins Slave on Windows with Master on Linux macine</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.ca/2018/02/how-to-setup-jenkins-project-and.html">How to Setup Jenkins Project and specify Windows Node to execute builds.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/07/how-to-install-jenkins-on-windows.html">How to Install Jenkins on Windows Machine.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/09/how-to-install-jenkins-on-ubuntu-1604.html">How to install Jenkins on Ubuntu 16.04.</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/10/jenkins-install-publish-over-ssh-plugin.html">Jenkins - Install Publish Over SSH plugin and execute command on Remote Linux System</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2018/11/install-sonarqube-server-sonarqube.html">Install SonarQube Server, SonarQube Scanner on Ubuntu Server and Integrate with Jenkins</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2019/02/jenkins-pipeline-build-and-push-docker.html">Jenkins Pipeline Build and push Docker Image to Docker Hub</a>
+</li>
+<li>
+<a href="https://linuxhowtoguide.blogspot.com/2019/02/how-to-setup-chef-workstation-hosted.html">How to Setup Chef Workstation, Hosted Chef Server and Configure Node using Chef cookbook</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=PageList&amp;widgetId=PageList9&amp;action=editWidget&amp;sectionId=sidebar-right-3" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList9"));' rel="nofollow" target="configPageList9" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</aside>
+</div>
+</div>
+</div>
+<div style="clear: both"></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class="main-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<footer>
+<div class="footer-outer">
+<div class="footer-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left footer-fauxborder-left">
+<div class="fauxborder-right footer-fauxborder-right"></div>
+<div class="region-inner footer-inner">
+<div class="foot no-items section" id="footer-1"></div>
+<table class="section-columns columns-2" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td class="first columns-cell">
+<div class="foot no-items section" id="footer-2-1"></div>
+</td>
+<td class="columns-cell">
+<div class="foot no-items section" id="footer-2-2"></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class="foot section" id="footer-3" name="Footer"><div class="widget Attribution" data-version="1" id="Attribution1">
+<div class="widget-content" style="text-align: center;">
+Simple theme. Powered by <a href="https://www.blogger.com/" target="_blank">Blogger</a>.
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="https://www.blogger.com/rearrange?blogID=4016716843503156610&amp;widgetType=Attribution&amp;widgetId=Attribution1&amp;action=editWidget&amp;sectionId=footer-3" onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' rel="nofollow" target="configAttribution1" title="Edit">
+<img alt="" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+</div>
+<div class="footer-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class="content-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+<script src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/plusone.js" type="text/javascript" gapi_processed="true"></script>
+
+<script type="text/javascript" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/1277560278-widgets.js"></script>
+<script type="text/javascript">
+window['__wavt'] = 'AOuZoY7AaOIJiJEN4g5W3GNPLofmPbreDA:1551885693654';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d4016716843503156610','//linuxhowtoguide.blogspot.com/2017/01/how-to-setup-web-page-test-private.html','4016716843503156610');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '4016716843503156610', 'title': 'Linux, Cloud \x26amp; Windows tutorials for beginners ', 'url': 'https://linuxhowtoguide.blogspot.com/2017/01/how-to-setup-web-page-test-private.html', 'canonicalUrl': 'https://linuxhowtoguide.blogspot.com/2017/01/how-to-setup-web-page-test-private.html', 'homepageUrl': 'https://linuxhowtoguide.blogspot.com/', 'searchUrl': 'https://linuxhowtoguide.blogspot.com/search', 'canonicalHomepageUrl': 'https://linuxhowtoguide.blogspot.com/', 'blogspotFaviconUrl': 'https://linuxhowtoguide.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Linux, Cloud \x26amp; Windows tutorials for beginners  - Atom\x22 href\x3d\x22https://linuxhowtoguide.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22Linux, Cloud \x26amp; Windows tutorials for beginners  - RSS\x22 href\x3d\x22https://linuxhowtoguide.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Linux, Cloud \x26amp; Windows tutorials for beginners  - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/4016716843503156610/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Linux, Cloud \x26amp; Windows tutorials for beginners  - Atom\x22 href\x3d\x22https://linuxhowtoguide.blogspot.com/feeds/3525644295856578726/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseClientId': 'ca-pub-1478923030603790', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'ieCssRetrofitLinks': '\x3c!--[if IE]\x3e\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22https://www.blogger.com/static/v1/jsbin/864213505-ieretrofit.js\x22\x3e\x3c/script\x3e\n\x3c![endif]--\x3e', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/8d162e5f282c5752', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'disableGComments': true, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '3525644295856578726', 'postImageThumbnailUrl': 'https://4.bp.blogspot.com/-7EjKKetCC1U/WIxVcZ5Y0WI/AAAAAAAACgM/qzW3oCbqsRAAyYSRgj8qqnDFyWgiatckQCLcB/s72-c/infp.php.png', 'postImageUrl': 'https://4.bp.blogspot.com/-7EjKKetCC1U/WIxVcZ5Y0WI/AAAAAAAACgM/qzW3oCbqsRAAyYSRgj8qqnDFyWgiatckQCLcB/s640/infp.php.png', 'pageName': 'How to Setup Web Page Test Private Instance Ubuntu 16.x', 'pageTitle': 'Linux, Cloud \x26amp; Windows tutorials for beginners : How to Setup Web Page Test Private Instance Ubuntu 16.x', 'metaDescription': ''}}, {'name': 'features', 'data': {'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'Simple', 'localizedName': 'Simple', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': false, 'variant': 'pale', 'variantId': 'pale'}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'How to Setup Web Page Test Private Instance Ubuntu 16.x', 'description': '\x22A blog for IT professionals, How to install and configure various package in Linux operating system, included Ubuntu, CentOS, Redhat, Debian etc.', 'featuredImage': 'https://4.bp.blogspot.com/-7EjKKetCC1U/WIxVcZ5Y0WI/AAAAAAAACgM/qzW3oCbqsRAAyYSRgj8qqnDFyWgiatckQCLcB/s640/infp.php.png', 'url': 'https://linuxhowtoguide.blogspot.com/2017/01/how-to-setup-web-page-test-private.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 3525644295856578726}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'legacyCommentModerationUrl': 'https://www.blogger.com/moderate-legacy-comment.g?blogID\x3d4016716843503156610', 'iframeCommentsId': 'gpluscomments', 'viewType': 'FILTERED_POSTMOD', 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/2821673263-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar-right-1', document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AdSenseView', new _WidgetInfo('AdSense1', 'sidebar-right-1', document.getElementById('AdSense1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-right-1', document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'sidebar-right-1', document.getElementById('PageList1'), {'title': 'UBUNTU', 'links': [{'isCurrentPage': false, 'href': 'http://linuxhowtoguide.blogspot.ca/2016/07/how-to-update-time-zone-linux-ubuntu.html', 'title': 'How to update Time Zone Linux Ubuntu '}, {'isCurrentPage': false, 'href': 'http://linuxhowtoguide.blogspot.ca/2016/07/how-to-install-and-configure-vsftpd-in.html', 'title': 'How to install and configure VSFTPD in linux ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://bitbucket.org/amars86/linux/wiki/How-To-Extend-Non-LVM-Partition-Linux', 'title': 'How To Extend Non LVM Partition Linux'}, {'isCurrentPage': false, 'href': 'http://linuxhowtoguide.blogspot.ca/2016/07/how-to-remove-any-package-from-linux.html', 'title': 'How to remove \x26 Purge any package from Linux Ubuntu completely '}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/07/how-to-setup-central-log-server.html', 'title': 'How to Setup Central Log Server  Ubuntu 16.04 TLS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/08/how-to-add-new-network-adapter-in-linux.html', 'title': 'How to add new Network Adapter in Linux Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/08/how-to-install-apache-tomcat-9-on.html', 'title': 'How To Install Apache Tomcat 9 on Ubuntu 16.04 '}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2016/08/how-to-enable-telnet-in-linux-server.html', 'title': 'How to Enable Telnet In Linux Server'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2016/08/how-to-send-e-mail-via-telnet-with.html', 'title': 'How To Send E-mail Via Telnet with Authentication'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2016/08/how-to-mount-windows-share-to-ubuntu.html', 'title': 'How to Mount Windows Share to Ubuntu Linux Machine using CIFS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/08/how-to-create-backup-of-all-users-home.html', 'title': 'How to Create Backup of all User\x27s Home Directory and Save as individually.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/12/step-by-step-installing-cacti-on-ubuntu.html', 'title': 'Step by Step Installing Cacti on Ubuntu 14.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/01/how-to-setup-web-page-test-private.html', 'title': 'How to Setup Web Page Test Private Instance Ubuntu 16.04.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/01/how-to-install-lxd-container-hypervisor.html', 'title': 'How to install LXD container hypervisor on Ubuntu 16.04 LTS server'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/02/how-to-install-and-configure-magento.html', 'title': 'How to install and configure Magento with Nginx Ubuntu 16.04 LTS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/06/how-to-install-apache-24-and-configure.html', 'title': 'How to Install Apache 2.4 and Configure Virtual Host in Ubuntu 16.04 LTS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/06/how-to-install-mysql-57-on-ubuntu-1604.html', 'title': 'How To Install MySQL 5.7 On Ubuntu 16.04 LTS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/06/how-to-setup-mysql-57-mastermaster.html', 'title': 'How to Setup MySQL 5.7 Master/Master Replication Ubuntu 16.04 LTS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/06/error-could-not-get-lock-varlibdpkglock.html', 'title': 'Error - Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/06/how-to-create-apache-self-signed-ssl.html', 'title': 'How to Create Apache Self Signed SSL Certificate Ubuntu 16.04 LTS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/06/how-to-setup-rsync-to-sync-directories.html', 'title': 'How to setup Rsync to Sync directories between two Ubuntu Linux Server Without  Password'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/07/how-to-create-lvm-logical-volume-in.html', 'title': 'How to Create (LVM) Logical Volume in Linux - (PVCreate, VGCreate, LVCreate,LVextend)'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/07/step-by-step-configuring-nfs-network.html', 'title': 'Step by Step configuring NFS (Network File System) Linux Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/07/step-by-step-move-lvm-vg-volume-group.html', 'title': 'How to Move LVM ( VG-Volume Group , PV-Physical Voulme and LV- Logical Volume) to another Linux System.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/07/step-by-step-setting-up-mail-server.html', 'title': 'Step by Step setting up a Mail Server Debain-9.0: Postfix, Dovecot, MySQL and PostfixAdmin '}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/08/how-to-run-apache-tomcat-multiple.html', 'title': 'How to Run Apache Tomcat Multiple instance on same server using two different IP address Linux.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/10/how-to-configure-postfix-smtp-relay.html', 'title': 'How to configure Postfix SMTP relay office365 on Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2018/02/scp-command-with-different-switch-linux.html', 'title': 'SCP command with different switch Linux'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2018/02/how-to-run-sudo-command-without.html', 'title': 'How to run Sudo command without entering password in the Linux'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2018/03/how-to-install-setup-apache-cassandra.html', 'title': 'How To Install \x26 Setup Apache Cassandra and Run a Single Node cluster on Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/p/cloud-world.html', 'title': ' How to install MEAN Stack (MongoDB, Express.JS, Angular.JS, Node.JS) on Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/p/jira.html', 'title': 'How to install Jira Server Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/p/postgresql.html', 'title': ' How to Install PostgreSQL, basic server setup \x26administration command'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/08/how-to-configurerun-multiple-php.html', 'title': 'How to configure/Run Multiple PHP version on Single Linux machine.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/p/plesk.html', 'title': 'Step by step installing \x26 Configuring Plesk on Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/p/apache.html', 'title': ' Redirect HTTP to HTTPS on Apache Virtual Host'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/p/sendmail.html', 'title': 'How to Setup Sendmail as SMTP relay'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/06/ubuntu1404-setup-unattended-security.html', 'title': 'Ubuntu14.04 setup unattended security update'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/08/how-to-migrate-user-from-one-linux.html', 'title': 'How to Migrate User from One Linux System to Fresh installed new Linux System'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/08/how-to-install-docker-in-ubuntu-1604-lts.html', 'title': 'How to install Docker in Ubuntu 16.04 LTS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/09/git-create-first-repository-and-first.html', 'title': 'Git - Create First Repository and Clone on local computer using git-bash Cli'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/10/how-to-secure-apache-with-lets-encrypt.html', 'title': 'How To Secure Apache with Let\x27s Encrypt on Ubuntu 18.04'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList5', 'sidebar-right-1', document.getElementById('PageList5'), {'title': 'CentOS', 'links': [{'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/08/how-to-mount-windows-share-to-linux.html', 'title': 'How to Mount Windows Share to Linux Machine using CIFS '}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/08/how-to-add-new-network-adapter-in-hyper.html', 'title': 'How to add new Network Adapter in Hyper-V Linux CentOS 6.4 '}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/08/how-to-send-email-from-gmail-or-hotmail.html', 'title': 'How to Send Email from Gmail E-mail\x27s account from command Linux CentOS '}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/08/how-to-create-folder-backup-keep.html', 'title': 'How to Create Folder Backup Keep Compress and E-mail Report Linux'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/09/setting-up-openerp-odoo-9-with-apache.html', 'title': 'Setting Up OpenERP (Odoo) 9 with Apache on CentOS 7.x'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/09/how-to-set-up-firewall-using-firewalld.html', 'title': 'How To Set Up a Firewall Using FirewallD on CentOS 7.x'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/09/setting-up-multiple-instance-of-openerp.html', 'title': 'Setting Up multiple Instance of OpenERP (Odoo) 9 on CentOS 7.x'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/09/how-to-install-subversion-on-centos-7x.html', 'title': 'How To Install Subversion On CentOS 7.X'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2016/10/step-by-step-creating-svn-repository.html', 'title': 'Step by Step Creating SVN Repository Centos 7.X'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2017/03/how-to-configure-postfix-smtp-relay.html', 'title': 'How to configure Postfix SMTP relay office365 on Centos 7.x'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/08/install-sendemail-simple-smtp-client.html', 'title': 'Install SendEmail (Simple SMTP client for Linux) on Linux Ubuntu, Centos \x26 Redhat'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList6', 'sidebar-right-1', document.getElementById('PageList6'), {'title': 'NAGIOS', 'links': [{'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/11/step-by-step-installation-of-nagios4x.html', 'title': 'Step by Step Installing Nagios Core 4.x Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/11/how-to-monitor-windows-machine-in.html', 'title': 'How to Monitor Windows Machine in Nagios using NSClient++ Agent'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/03/how-to-install-nagios-on-centos-67.html', 'title': 'How to Install Nagios on Centos 6.7 final release'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/03/how-to-install-and-configure-nagios-4x.html', 'title': 'How to Install and configure Nagios 4.x on Centos 7.x'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/03/how-to-install-and-configure-pnp4nagios.html', 'title': 'How to Install and configure Pnp4Nagios Bulk+NPCD Mode with Nagios4.x Centos 7.x'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/09/steps-how-to-install-and-configure.html', 'title': 'Steps how to install and configure Pnp4Nagios Bulk+NPCD Mode with Nagios4.x Ubuntu-16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/10/steps-how-to-configure-e-mail.html', 'title': 'Steps how to configure E-mail notification Nagios4.x Ubuntu-16.04'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AdSenseView', new _WidgetInfo('AdSense6', 'sidebar-right-1', document.getElementById('AdSense6'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList3', 'sidebar-right-1', document.getElementById('PageList3'), {'title': 'NGINX', 'links': [{'isCurrentPage': false, 'href': 'https://bitbucket.org/amars86/linux/wiki/How_To_Install_And_Configure_Nginx_+php-fpm_+mysql5.7_Ubuntu16.04', 'title': 'How To Install And Configure Nginx php-fpm and mysql5.7 Ubuntu16.04'}, {'isCurrentPage': false, 'href': 'https://bitbucket.org/amars86/linux/wiki/How_to_configure_Nginx_load_balancer', 'title': 'How to configure Nginx load balancer '}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/p/nodejs.html', 'title': 'NodeJS Setup NodeJS Application on Production with Nginx as reverse proxy Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/p/nginx.html', 'title': 'Nginx - Installation and configuration steps Ubuntu 16.04'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList11', 'sidebar-right-1', document.getElementById('PageList11'), {'title': 'Apache2', 'links': [{'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/06/how-to-install-apache-24-and-configure.html', 'title': 'How to Install Apache 2.4 and Configure Virtual Host in Ubuntu 16.04 LTS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/p/apache24.html', 'title': 'apache2.4 - How to redirect your application to HTTP from HTTPS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/p/apache.html', 'title': 'Redirect HTTP to HTTPS on Apache Virtual Host'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList4', 'sidebar-right-1', document.getElementById('PageList4'), {'title': 'VmWare', 'links': [{'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/07/how-to-forward-vmware-esxi-5x-and-6x.html', 'title': 'How to forward Vmware ESXi 5.x and 6.x host logs to central log server '}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AdSenseView', new _WidgetInfo('AdSense5', 'sidebar-right-1', document.getElementById('AdSense5'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList10', 'sidebar-right-1', document.getElementById('PageList10'), {'title': 'MongoDB', 'links': [{'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2018/03/how-to-install-mongodb-3x-on-ubuntu.html', 'title': 'How to Install MongoDB 3.x on Ubuntu 16.04 LTS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2018/03/mongodb-basic-administration-command.html', 'title': 'Mongodb basic administration command- Create DB, Create User, Assign Permission, restrict access'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2018/03/how-to-setup-and-configure-parse-server.html', 'title': 'How to Setup and Configure Parse Server with Parse Dashboard Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2018/03/how-to-setup-parse-dashboard-on-ubuntu.html', 'title': 'How to Setup Parse Dashboard on Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2018/03/how-to-keep-parse-server-dashboard.html', 'title': 'How to Keep parse server dashboard running or start at system boot'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/p/mongobd.html', 'title': 'MongoDB - 10 Easy steps for Administrator to manage MongoDB Server'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/p/nodejs.html', 'title': 'NodeJS Setup NodeJS Application on Production with Nginx as reverse proxy Ubuntu 16.04'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList2', 'sidebar-right-1', document.getElementById('PageList2'), {'title': 'MYSQL', 'links': [{'isCurrentPage': false, 'href': 'http://linuxhowtoguide.blogspot.ca/2016/07/mysql-error-1018-hy000-cant-read-dir-of.html', 'title': 'MySql - ERROR 1018 (HY000): Can\x27t read dir of \x27.\x27 (errno: 24 - Too many open files'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/08/how-to-backup-all-database-mysql.html', 'title': 'Backup all MySql database using script.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2016/08/error-mysql-manager-or-server-pid-file.html', 'title': 'ERROR! MySQL manager or server PID file could not be found!'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/08/how-to-take-mysql-backup-using-bin-bash.html', 'title': 'How to take MySQL backup using bin bash script Linux- Ubuntu, Centos, Redhat \x26 send Email notification'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/08/some-useful-important-mysql-command-to.html', 'title': 'Some useful important MySQL command to monitor Process, Open connection and load average'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/09/solved-error-3167-hy000.html', 'title': '[SOLVED] ERROR 3167 (HY000) The \x27INFORMATION_SCHEMA.GLOBAL_VARIABLES\x27 feature is disabled see the documentation for \x27show_compatibility_56\x27'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/p/mysql.html', 'title': 'How to Create MySQL Database, User, Password and grant permission.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/09/test-database-connectivity-using-php.html', 'title': 'Test Database connectivity using PHP script'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AdSenseView', new _WidgetInfo('AdSense2', 'sidebar-right-1', document.getElementById('AdSense2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList7', 'sidebar-right-1', document.getElementById('PageList7'), {'title': 'AWS', 'links': [{'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/09/what-is-amazon-ec2-elastic-compute-cloud.html', 'title': 'What is Amazon EC2 (Elastic Compute Cloud )'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/2017/10/what-is-amazon-s3-glacier-and-its.html', 'title': 'What is Amazon S3 \x26 Glacier and it\x27s limitations'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/10/what-is-amazon-iam-identity-access.html', 'title': 'What is Amazon IAM (Identity access management)'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/10/what-is-amazon-cloud-front.html', 'title': 'What is Amazon Cloud Front'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/11/what-is-aws-powershell-and-working-with.html', 'title': 'What is AWS Powershell and Working with it'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/11/what-is-aws-command-line-interface-aws.html', 'title': 'What is AWS command line interface ( AWS CLI )'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/p/puttygen.html', 'title': 'How to Convert .PEMto .PPK Private key'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.in/p/awsuser.html', 'title': 'How to add new user AWS EC2 instance and add .PPK file to allow access'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/08/what-is-aws-opsworks.html', 'title': 'What is AWS OpsWorks'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/08/how-to-transfer-putty-saved-session-to.html', 'title': 'How to transfer Putty saved session to another Windows Machine.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/08/how-to-install-docker-in-windows-machine.html', 'title': 'How to install Docker in Windows Machine'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/10/install-aws-command-line-interface-cli.html', 'title': 'Install AWS Command Line Interface (CLI) on Ubuntu 18.04 LTS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/11/what-is-amazon-elastic-load-balancing.html', 'title': 'What is Amazon Elastic Load Balancing'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/12/how-to-setup-aws-eks-cluster-with.html', 'title': 'How to Setup AWS EKS Cluster with Worker Node and Managment Server'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2019/01/how-to-setup-lamp-stack-on-aws-eks.html', 'title': 'How to Setup LAMP stack on AWS EKS'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList8', 'sidebar-right-1', document.getElementById('PageList8'), {'title': 'Window- PowerShell', 'links': [{'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/11/how-to-stop-and-start-service-using.html', 'title': 'How to Stop and Start Service using Powershell until service status equal to Started or stopped'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2017/12/how-to-get-systems-inventory-ie-ram.html', 'title': 'How to Get Systems Inventory i.e. RAM, Disk, CPU and Operating systems information using Powershell in domain.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2018/03/step-by-step-installation-of-octopus.html', 'title': 'Step by Step installation of Octopus deploy server.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2018/03/how-to-configure-infrastructure-in.html', 'title': 'How to configure infrastructure in octopus deploy server and add target machine'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/p/domainrecord.html', 'title': 'How to Check DNS Records Type- A, NS, TXT, CNAME, MX using Powersell'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/07/extract-zip-using-powershell-script.html', 'title': 'Extract Zip files using Powershell Script'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/09/how-to-enable-psremoting-to-execute.html', 'title': 'How to enable PSRemoting to execute Powershell script from Remote Machine.'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList12', 'sidebar-right-2-1', document.getElementById('PageList12'), {'title': 'Docker', 'links': [{'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/08/how-to-install-docker-in-ubuntu-1604-lts.html', 'title': 'How to install Docker in Ubuntu 16.04 LTS'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/11/dockerfile-create-docker-image-and.html', 'title': 'DockerFile - Create Docker image and install Apache2 on Ubuntu16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/12/how-to-setup-two-nodes-docker-swarm.html', 'title': 'How to Setup Two Nodes Docker Swarm Cluster - Ubuntu 16.04'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/12/dockerfile-create-docker-image-with.html', 'title': 'Dockerfile- Create Docker Image with Apache-2.4 and PHP-7.2'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/12/how-to-setup-single-node-kubernetes.html', 'title': 'How to Setup Single Node Kubernetes Cluster using MiniKube On Windows'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2019/01/how-to-setup-lamp-stack-on-docker-system.html', 'title': 'How to Setup LAMP Stack on Docker System'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2019/02/how-to-install-docker-in-windows-7.html', 'title': 'How to Install Docker in Windows 7'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AdSenseView', new _WidgetInfo('AdSense3', 'sidebar-right-2-1', document.getElementById('AdSense3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AdSenseView', new _WidgetInfo('AdSense4', 'sidebar-right-2-2', document.getElementById('AdSense4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList9', 'sidebar-right-3', document.getElementById('PageList9'), {'title': 'Jenkins', 'links': [{'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2018/02/how-to-setup-jenkins-slave-on-windows.html', 'title': 'How to setup Jenkins Slave on Windows with Master on Linux macine'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.ca/2018/02/how-to-setup-jenkins-project-and.html', 'title': 'How to Setup Jenkins Project and specify Windows Node to execute builds.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/07/how-to-install-jenkins-on-windows.html', 'title': 'How to Install Jenkins on Windows Machine.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/09/how-to-install-jenkins-on-ubuntu-1604.html', 'title': 'How to install Jenkins on Ubuntu 16.04.'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/10/jenkins-install-publish-over-ssh-plugin.html', 'title': 'Jenkins - Install Publish Over SSH plugin and execute command on Remote Linux System'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2018/11/install-sonarqube-server-sonarqube.html', 'title': 'Install SonarQube Server, SonarQube Scanner on Ubuntu Server and Integrate with Jenkins'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2019/02/jenkins-pipeline-build-and-push-docker.html', 'title': 'Jenkins Pipeline Build and push Docker Image to Docker Hub'}, {'isCurrentPage': false, 'href': 'https://linuxhowtoguide.blogspot.com/2019/02/how-to-setup-chef-workstation-hosted.html', 'title': 'How to Setup Chef Workstation, Hosted Chef Server and Configure Node using Chef cookbook'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script>
+
+<iframe name="oauth2relay683794905" id="oauth2relay683794905" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/postmessageRelay.html" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1" aria-hidden="true"></iframe><iframe id="google_osd_static_frame_9093459453131" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><link type="text/css" rel="stylesheet" href="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/368954415-lightbox_bundle.css"><script type="text/javascript" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/2821673263-lbx.js"></script></body><iframe id="google_esf" name="google_esf" src="Linux,%20Cloud%20&amp;%20Windows%20tutorials%20for%20beginners%20:%20How%20to%20Setup%20Web%20Page%20Test%20Private%20Instance%20Ubuntu%2016.x_files/zrt_lookup.html" style="display: none;" data-ad-client="ca-pub-1478923030603790"></iframe></html>
