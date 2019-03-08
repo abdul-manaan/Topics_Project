@@ -15,7 +15,8 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
         jobject instance,
         jint oom,
         jint mem,
-        string fname) {
+        string fname,
+        jint session) {
     std::string hello = "Hello C++";
     setuid(0);
     nice(oom);
@@ -64,12 +65,18 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
     FILE* file;
     file = fopen((std::string("/sdcard/")+fname).c_str(), "wb");
 
+    int timer = 0;
     if (file != NULL)
     {
-
-        for(int i=0;i<mem;i++) {
-            string sstr(1024*1024, ' ');
-            s.push_back(sstr);
+        int i =0;
+        while(timer < session) {
+            i++;
+            if(i < mem){
+                string sstr(1024*1024, ' ');
+                s.push_back(sstr);
+            } else {
+                timer++;
+            }
             int tSize = 0, resident = 0, share = 0;
             int tSize1 = 0, resident1 = 0, share1 = 0;
             ifstream buffer("/proc/self/statm");
@@ -84,6 +91,7 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
             buffer1.close();
 
             long page_size_kb = sysconf(_SC_PAGE_SIZE) / 1024; // in case x86-64 is configured to use 2MB pages
+//            __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "Page Size %d",sysconf(_SC_PAGE_SIZE) );
             double self_rss = resident * page_size_kb;
 
             double self_shared_mem = share * page_size_kb;
@@ -94,6 +102,9 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
 
             __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "index: %d \t Self_PSS: %f \t Chrome_PSS: %f",i,(self_rss - self_shared_mem), (chrome_rss - chrome_shared_mem));
             fprintf(file, "%d,%f,%f\n",i,(self_rss - self_shared_mem), (chrome_rss - chrome_shared_mem));
+            if (timer > 0){
+                sleep(1);
+            }
         }
         fflush(file);
         fclose(file);
