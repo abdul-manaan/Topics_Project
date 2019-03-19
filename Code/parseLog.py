@@ -1,21 +1,10 @@
-import datetime
+# No Need Edit Already fixed the error
+
 import pandas as pd
-import numpy as np
 
 filename = 'ashed.txt'
 apps = ['com.yandex.browser', 'com.android.chrome', 'com.microsoft.emmx', 'org.mozilla.firefox']
 main_dict = {}
-
-# with open(filename) as w:
-#     str = w.readline()
-#     while str :
-#         if  ('ActivityManager: Displayed' in str or "ActivityManager: Killing" in str):
-#             for i in apps: 
-#                 if i in str:
-#                     print str
-        
-#         str = w.readline()
-
 
 def get_time_difference(t1,t2):
 	t1s = t1.split(':')
@@ -26,7 +15,7 @@ def get_time_difference(t1,t2):
 	secs = float (t2s[2]) -  float(t1s[2])
 
 	ans = hrs*3600+mins*60+secs
-	print ans
+	# print ans
 	return ans
 
 def find_app_record(apps):
@@ -38,6 +27,7 @@ def find_app_record(apps):
 		length = len(all_data)
 
 		for app in apps:
+			print "====> ", app
 			i = 0
 			while i<length:
 				# print i
@@ -50,19 +40,20 @@ def find_app_record(apps):
 							process_killed += 1
 						i += 1
 
-					if not app in all_data[i] and "ActivityManager: Displayed" in all_data[i]:
-						break
+					if app in all_data[i] and "ActivityManager: Displayed" in all_data[i]:
+						launch_display_time = all_data[i].split()[1]
+						launch_time = get_time_difference(launch_request_time,launch_display_time)
 
-					launch_display_time = all_data[i].split()[1]
-					launch_time = get_time_difference(launch_request_time,launch_display_time)
+						if "launch_time" not in main_dict[app]:
+							main_dict[app]["launch_time"] = launch_time
+						if "process_killed" not in main_dict[app]:
+							main_dict[app]["process_killed"] = process_killed
 
-					if "launch_time" not in main_dict[app]:
-						main_dict[app]["launch_time"] = []
-					if "process_killed" not in main_dict[app]:
-						main_dict[app]["process_killed"] = []
+						if "launch_time" in main_dict[app]:
+							main_dict[app]["launch_time_L"] = launch_time
+						if "process_killed" in main_dict[app]:
+							main_dict[app]["process_killed_L"] = process_killed
 
-					main_dict[app]["launch_time"].append(launch_time)
-					main_dict[app]["process_killed"].append(process_killed)
 
 				i += 1
 
@@ -71,19 +62,12 @@ def find_app_record(apps):
 		df.to_csv(f, header=True)
 		f.write('\n')
 
-		
-
-
 def main():
 	find_app_record(apps)
-
-
+		
 main()
 
-# filename = 'ashed.txt'
-# with open(filename) as fin:
-# 	line = fin.readline()
-# 	while line:
-# 		if "yandex" in line:
-# 			print line
-# 		line = fin.readline()
+
+
+
+
