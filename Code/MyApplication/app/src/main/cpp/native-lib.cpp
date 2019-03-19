@@ -96,17 +96,21 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
 
         while(timer < session) {
             nice(oom);
+            auto command = "su -c \"echo " + to_string(oom) + " > /proc/"+(to_string(getpid()))+"/oom_adj\" ";
+            system(command.c_str());
             ofstream myfile;
             myfile.open ("/proc/"+(to_string(getpid())) + "/oom_adj");
             myfile << oom;
             myfile.close();
             i++;
-            if(i < mem){
-                string sstr(1024*1024, ' ');
+            int x = 0;
+            while((dumpsysTable["Pss"]/1024) + x < mem){
+                string sstr(1024*1024*50, ' ');
                 s.push_back(sstr);
-            } else {
-                timer++;
+                x += 50;
             }
+            timer++;
+
             long long cur_process[5];
             long long given_app[5];
             ifstream buffer("/proc/self/statm");
@@ -125,8 +129,8 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
 //            __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "Page Size %d",sysconf(_SC_PAGE_SIZE) );
 
             meminfoTable = readInput("/proc/meminfo");
-            auto dumpsysTable    = doSegment(command_dumpsys.c_str());
-            auto appDumpsysTable = doSegment(app_dumpsys.c_str());
+            dumpsysTable    = doSegment(command_dumpsys.c_str());
+            appDumpsysTable = doSegment(app_dumpsys.c_str());
 
 //            __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "index: %d \t Self_PSS: %f \t Chrome_PSS: %f",i,(self_rss - self_shared_mem), (chrome_rss - chrome_shared_mem));
 
