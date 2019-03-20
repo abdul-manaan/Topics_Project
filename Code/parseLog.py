@@ -1,18 +1,4 @@
-<<<<<<< HEAD
-# No Need Edit Already fixed the error
-
-import pandas as pd
-=======
-import numpy as np
->>>>>>> Updated scripts to log android browsers load time
-
-main_dict = {}
-
-<<<<<<< HEAD
-=======
-
 # Given two strings, it will parse them as time in format => HH:MM:SS.mmm
->>>>>>> Updated scripts to log android browsers load time
 def get_time_difference(t1,t2):
     try:
             t1s = t1.split(':')
@@ -22,18 +8,12 @@ def get_time_difference(t1,t2):
             mins = float (t2s[1]) -  float(t1s[1])
             secs = float (t2s[2]) -  float(t1s[2])
 
-<<<<<<< HEAD
-	ans = hrs*3600+mins*60+secs
-	# print ans
-	return ans
-=======
             ans = hrs*3600+mins*60+secs
             return ans
     except Exception as e:
         print('Error in conversion of string to time')
         print(e)
->>>>>>> Updated scripts to log android browsers load time
-
+'''  Abrar COde 
 def find_app_record(apps):
 	for app in apps:
 		main_dict[app] = {}
@@ -78,19 +58,10 @@ def find_app_record(apps):
 		df = pd.DataFrame(main_dict,columns = list(main_dict.keys()).sort())
 		df.to_csv(f, header=True)
 		f.write('\n')
-<<<<<<< HEAD
-
-def main():
-	find_app_record(apps)
-=======
->>>>>>> Updated scripts to log android browsers load time
-		
-main()
-
-<<<<<<< HEAD
+'''
 
 
-=======
+
 # This function will save a dict as CSV in given filename.
 # Requirements: Pandas Library 
 def save_as_csv(dict, filename):
@@ -185,6 +156,6 @@ def main():
     except Exception as e:
         print("Error in main")
         print(e)
->>>>>>> Updated scripts to log android browsers load time
 
 
+main()
