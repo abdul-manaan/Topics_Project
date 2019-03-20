@@ -1,0 +1,17 @@
+
+Following shell commands are used to remove apps from Cache/Foreground/Background and then clear logcat.
+
+	adb shell pm clear com.android.chrome && \
+	adb shell pm clear com.sec.android.app.sbrowser && \
+	adb shell pm clear com.yandex.browser && \
+	adb shell pm clear  com.microsoft.emmx &&\
+	adb shell pm clear  org.mozilla.firefox &&\
+	adb shell logcat -c && \
+	adb shell logcat *:V -v long > log.txt
+
+
+These activities are get using following command: adb shell dumpsys window windows | grep -E 'mCurrentFocus|mFocusedApp'
+	com.microsoft.emmx/org.chromium.chrome.browser.ChromeTabbedActivity
+	com.yandex.browser/.YandexBrowserMainActivity
+	org.mozilla.firefox/org.mozilla.gecko.BrowserApp
+	com.android.chrome/com.google.android.apps.chrome.Main
