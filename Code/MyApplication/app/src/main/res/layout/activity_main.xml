@@ -84,8 +84,8 @@
                     android:id="@+id/monitorApp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Pid of App to Monitor"
-                    android:text="-1"
+                    android:hint="Name of App to Monitor"
+                    android:text="com.android.chrome"
                     tools:layout_conversion_absoluteWidth="196dp" />
             </android.support.design.widget.TextInputLayout>
 

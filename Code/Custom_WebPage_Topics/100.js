@@ -1,19 +1,13 @@
-// 100 MB
+// 500 MB
 var x = [];
 
-function createSomeNodes() {
-    var div,
-        i = 100,
-        frag = document.createDocumentFragment();
-    for (;i > 0; i--) {
-        div = document.createElement("div");
-        div.appendChild(document.createTextNode(i + " - "+ new Date().toTimeString()));
-        frag.appendChild(div);
-    }
-    document.getElementById("nodes").appendChild(frag);
-}
 function grow() {
-    x.push(new Array(104857600).join('x'));
-    createSomeNodes();
-    setTimeout(grow,1000);
+    
+        let arr = Array(1024*1024/16*100).fill(" ")
+        x.concat(arr);
+        arr.reverse();
+        // createSomeNodes();
+        // setTimeout(grow,5000);
 }
+
+grow();

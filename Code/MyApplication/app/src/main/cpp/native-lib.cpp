@@ -22,7 +22,7 @@ map<string,long long> readInput(string fileName);
 int getNum(string s);
 map<string,long long>  doSegment(string sentence);
 string execShell(const char* cmd);
-
+int getPidof(string appName);
 
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_example_myapplication_MainActivity_stringFromJNI(
@@ -32,14 +32,15 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
         jint mem,
         jstring fname_ ,
         jint session,
-        jint appName) {
+        jstring appName_) {
 
 
     const char *fname = (*env).GetStringUTFChars(fname_,0);
-    printf("%s", fname);
     (*env).ReleaseStringUTFChars( fname_, fname);
 
-//    __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "File error! Can't Open File %s", res);
+    const char *appName = (*env).GetStringUTFChars(appName_,0);
+    (*env).ReleaseStringUTFChars( appName_, appName);
+
 
 
     std::string hello = "Hello C++";
@@ -55,7 +56,8 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
 
     struct dirent * entry;
 
-    pid = appName;
+    pid = getPidof(appName);
+    __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "File error! Can't Open File %s %d", appName, pid);
 
 
 
@@ -95,6 +97,8 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
         fprintf(file,"\n");
 
         while(timer < session) {
+            if(timer%50 == 0)
+                pid = max(pid,getPidof(appName));
             nice(oom);
             auto command = "su -c \"echo " + to_string(oom) + " > /proc/"+(to_string(getpid()))+"/oom_adj\" ";
             system(command.c_str());
@@ -129,6 +133,7 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
 //            __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "Page Size %d",sysconf(_SC_PAGE_SIZE) );
 
             meminfoTable = readInput("/proc/meminfo");
+            app_dumpsys = "/proc/" + to_string(pid)+"/smaps";
             dumpsysTable    = doSegment(command_dumpsys.c_str());
             appDumpsysTable = doSegment(app_dumpsys.c_str());
 
@@ -188,7 +193,7 @@ map<string,long long> readInput(string fileName){
     file.open(fileName.c_str());
     map<string,long long> allData;
     if (!file) {
-        __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "File error! Can't Open File");
+        __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "File error! Can't Open File smaps");
         return allData;
 //        exit(1);   // call system to stop
     }
@@ -220,8 +225,23 @@ vector<string> splitStr(string line){
     return result;
 }
 
-
-
+int getPidof(string appName) {
+    //ps -aux "com.android.chrome" | grep com
+    string filen = "su -c \"ps -aux " + appName + " | grep " + appName + " > /sdcard/temo.txt\" ";
+    system(filen.c_str());
+    ifstream file;
+    file.open("/sdcard/temo.txt");
+    if (!file) {
+        __android_log_print(ANDROID_LOG_ERROR , "TRACKERS" , "File error! Can't Open File ");
+        return -1;
+    }
+    string s;
+    int ans;
+    file >> s >> ans;
+    __android_log_print(ANDROID_LOG_ERROR , "TRACKERS" , "File error! Can't Open File %s" ,s.c_str());
+    file.close();
+    return ans;
+}
 
 map<string,long long>  doSegment(string fileName)
 {
@@ -231,7 +251,7 @@ map<string,long long>  doSegment(string fileName)
     map<string,long long> allData;
     file.open("/sdcard/tempo.txt");
     if (!file) {
-        __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "File error! Can't Open File %s",fileName.c_str());
+        __android_log_print(ANDROID_LOG_ERROR, "TRACKERS", "e %s",fileName.c_str());
         return allData;
     }
 

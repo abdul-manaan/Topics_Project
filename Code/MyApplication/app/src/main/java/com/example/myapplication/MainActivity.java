@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    public native String stringFromJNI(int mem,int oom,String fname,int session ,int appName);
+    public native String stringFromJNI(int mem,int oom,String fname,int session ,String appName);
 
     public void callMe(View view) {
 
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         String sess = _sess.getText().toString();
         String app = _app.getText().toString();
         out.printf("%s %d %s",fame, parseInt(oom), parseInt(mem));
-        out.println(stringFromJNI( parseInt(oom), parseInt(mem), fame, parseInt(sess), parseInt(app)));
+        out.println(stringFromJNI( parseInt(oom), parseInt(mem), fame, parseInt(sess), app));
 
     }
 }
