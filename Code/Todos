@@ -1,0 +1,15 @@
+1. Measue Load Time of Browsers on following memory pressures:
+    20%, 40%, 60%, 80%, 90%
+
+    => Mobile Phones Both Nokia and Samsung
+    => APP OOM_Value will be following:
+        -17, -7, 0, 7, 16
+    => Repeat 3 times each reading
+
+2. Measure Page Load Times of different webpages on these browsers
+    
+    => Webpages should differ in terms of memory
+        1MB, 10MB, 100MB, 1000MB
+
+    => Above mentioned memory pressures and OOM_VALUES
+    => Repeat 3 times 
