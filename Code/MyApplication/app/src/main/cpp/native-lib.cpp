@@ -95,13 +95,17 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
             fprintf( file, ",%s", x.first.c_str() );
         }
         fprintf(file,"\n");
+        auto command = "su -c \"echo " + to_string(oom) + " > /proc/"+(to_string(getpid()))+"/oom_adj\" ";
+        auto command2 = "su -c \"chmod " + to_string(444) + " /proc/"+(to_string(getpid()))+"/oom_adj\" ";
+        system(command.c_str());
+        system(command2.c_str());
 
         while(timer < session) {
             if(timer%50 == 0)
                 pid = max(pid,getPidof(appName));
-            nice(oom);
-            auto command = "su -c \"echo " + to_string(oom) + " > /proc/"+(to_string(getpid()))+"/oom_adj\" ";
-            system(command.c_str());
+//            nice(oom);
+//            auto command = "su -c \"echo " + to_string(oom) + " > /proc/"+(to_string(getpid()))+"/oom_adj\" ";
+//            system(command.c_str());
             ofstream myfile;
             myfile.open ("/proc/"+(to_string(getpid())) + "/oom_adj");
             myfile << oom;

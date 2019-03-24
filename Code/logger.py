@@ -84,6 +84,6 @@ def main():
                 open_app(i,time)
             saving_log.wait()
     except Exception as e:
-        print("Error in  main!")
+        print("Error in  main! ",e)
 
 main()
