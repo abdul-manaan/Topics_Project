@@ -93,7 +93,7 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
             fprintf( file, ",%s", x.first.c_str() );
         }
         fprintf(file,"\n");
-
+               int x = 0;
         while(timer < session) {
             nice(oom);
             auto command = "su -c \"echo " + to_string(oom) + " > /proc/"+(to_string(getpid()))+"/oom_adj\" ";
@@ -103,8 +103,8 @@ Java_com_example_myapplication_MainActivity_stringFromJNI(
             myfile << oom;
             myfile.close();
             i++;
-            int x = 0;
-            while((dumpsysTable["Pss"]/1024) + x < mem){
+            
+            if((dumpsysTable["Pss"]/1024) + x < mem){
                 string sstr(1024*1024*50, ' ');
                 s.push_back(sstr);
                 x += 50;
