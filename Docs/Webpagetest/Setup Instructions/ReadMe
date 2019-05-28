@@ -32,6 +32,8 @@ Add this to www/settings/locations.ini:
         type=nodejs,mobile
         connectivity="WiFi"
 
+if not location.ini not present rename locations.ini.sample to locations.ini and replace the above lines 
+
 Download wptagent from following link:
         https://codeload.github.com/WPO-Foundation/wptagent/zip/master
 
